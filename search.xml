@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Day01-MySQL基础知识]]></title>
+    <url>%2F2017%2F12%2F19%2FMySQL%2FDay01-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[数据库基本概念常见数据库123MySQL | SQL Serevr | Oracle | DB2 | Sybase | Access | ...MongoDB Memcache | Redis SQL核心功能1234DDL 数据定义语言 defined CREATE DROP ALTERDQL 数据查询语言 query SELECTDML 数据操作语言 modified INSERT UPDATE DELETEDCL 数据控制语言 control GRANT REVOKE MySQL客户端1cmd | phpMyAdmin | Navicat MySQL服务器的登录与登出MySQL## 数据库操作数据表操作]]></content>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[模型]]></title>
+    <url>%2F2017%2F12%2F18%2FThinkPHP%2F03-%E6%A8%A1%E5%9E%8B%2F</url>
+    <content type="text"><![CDATA[CURD操作添加 add 格式: $model -&gt; add($data); 修改 save123格式: $model -&gt; save($data);参数: 一维关联数组 含有要修改记录的主键id返回: 0 || 1 删除查询find12- find()- find(主键id) 返回 一维数组或者NULL select123-&gt; select()-&gt; select(&apos;主键1, 主键2, 主键3, ..., 主键n&apos;)-&gt; select(主键id) 返回 二维数组或者Array(0){} find与select 如果明知道查询结果只有一条 那么使用find更优]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[2017年北京开发者年会]]></title>
+    <url>%2F2017%2F12%2F18%2F%E5%AD%A6%E4%B9%A0%2F01-2017%E5%B9%B4%E5%8C%97%E4%BA%ACPHP%E5%BC%80%E5%8F%91%E8%80%85%E5%B9%B4%E4%BC%9A%2F</url>
+    <content type="text"><![CDATA[韩天峰 - PHP与Swoole未来开源项目 Swoole123456789102012年开始 至今历时5年民主化 RFCSwoole2内置协程 既快又简单 目标：让该项目真正应用到生成中PHP JIT (PHP8.0) 将PHP代码直接转化成机器指令PHP+X： 连接C++与PHPPHP本身是没办法做绘制图形、音频、视频等这些事情的 都是靠写扩展库PHP-Sciter: PHP写GUI程序PHPExcel：是目前来说使用量最大的操作Excel的库 但这是PHP写的 无法适用于大量的文件PHP-Libreoffice：photo操作Word、Excel、PDF 目标：PHP直接调用C来实现 商业项目123Swoole Compiler 源代码保护、数据加密、授权、基于AST进行漏洞扫描Swoole PlusSwoole lot System NeekeGao - 大话性能SeasLog JSONNet Druid-PHP (作者)Druid-PHP 适用于大数据方向 大数据组件SoLoMo 社交化 本地化 (1971 John Doerr)架构1234西直门立交桥 - 通过队列和阻塞 提交交通效率 降低事故发生率- 没有红绿灯 不需要交警将生活关联到我们的开发 工作 PHP应用模型1234- 应用层 (DB Cache API Log)- 连接池 批量操作 DB索引 cache分区 读写分离 - 将日志缓存起来 合并IO 复用连接 并行操作 更快的序列化- 物理层 (IO Memory CPU Network) 12看鸟哥的PHP大会分享FasterCGI 问题思考12345CDN ?Retry ? 代理 与 负载 ?SQL or NoSQL ?Cache ?SOA ? (微服务) 分享12345678避免递归、多层循环、频繁IO善用缓存慎用锁恰当的 小力度的使用事务选择适当的通信方式合理的使用并行计算合理的进行异步处理... 立足于业务、实现于架构、DBA、测试者、运维、统筹管理者的角度 梅岭周 天地汇 互联网+物流]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[01-PHP变量与常量]]></title>
+    <url>%2F2017%2F12%2F16%2FPHP%2F01-PHP%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F%2F</url>
+    <content type="text"><![CDATA[语言基础PHP(HyperText PreProcessor | 超文本预处理器) 特点运行在服务器上 可以嵌入HTML 开源 免费 跨平台 扩展名 .php注释井号 单行注释 shell风格 // 单行注释 C风格 /**/ 多行注释 C风格 变量名区分大小写 关键字和函数名不区分大小写变量常量]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>PHP</tag>
+      </tags>
+  </entry>
+</search>
