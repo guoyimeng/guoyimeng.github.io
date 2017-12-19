@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="MySQL," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="CURD操作添加 add 格式: $model -&amp;gt; add($data);  修改 save123格式: $model -&amp;gt; save($data);参数: 一维关联数组 含有要修改记录的主键id返回: 0 || 1 删除查询find12- find()- find(主键id)  返回 一维数组或者NULL  select123-&amp;gt; select()-&amp;gt; select(&amp;">
-<meta name="keywords" content="PHP,算法,代码,随笔">
+<meta name="description" content="数据库基本概念常见数据库123MySQL | SQL Serevr | Oracle | DB2 | Sybase | Access | ...MongoDB Memcache | Redis SQL核心功能1234DDL 数据定义语言 defined  CREATE DROP ALTERDQL 数据查询语言 query		SELECTDML 数据操作语言 modified	INSERT UPDA">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="模型">
-<meta property="og:url" content="https://github.com/guoyimeng/2017/12/18/ThinkPHP/03-模型/index.html">
+<meta property="og:title" content="MySQL基础知识-1">
+<meta property="og:url" content="https://github.com/guoyimeng/2017/12/19/MySQL-01-MySQL基础知识/index.html">
 <meta property="og:site_name" content="二萌">
-<meta property="og:description" content="CURD操作添加 add 格式: $model -&amp;gt; add($data);  修改 save123格式: $model -&amp;gt; save($data);参数: 一维关联数组 含有要修改记录的主键id返回: 0 || 1 删除查询find12- find()- find(主键id)  返回 一维数组或者NULL  select123-&amp;gt; select()-&amp;gt; select(&amp;">
+<meta property="og:description" content="数据库基本概念常见数据库123MySQL | SQL Serevr | Oracle | DB2 | Sybase | Access | ...MongoDB Memcache | Redis SQL核心功能1234DDL 数据定义语言 defined  CREATE DROP ALTERDQL 数据查询语言 query		SELECTDML 数据操作语言 modified	INSERT UPDA">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-18T02:27:45.851Z">
+<meta property="og:updated_time" content="2017-12-19T03:20:36.747Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="模型">
-<meta name="twitter:description" content="CURD操作添加 add 格式: $model -&amp;gt; add($data);  修改 save123格式: $model -&amp;gt; save($data);参数: 一维关联数组 含有要修改记录的主键id返回: 0 || 1 删除查询find12- find()- find(主键id)  返回 一维数组或者NULL  select123-&amp;gt; select()-&amp;gt; select(&amp;">
+<meta name="twitter:title" content="MySQL基础知识-1">
+<meta name="twitter:description" content="数据库基本概念常见数据库123MySQL | SQL Serevr | Oracle | DB2 | Sybase | Access | ...MongoDB Memcache | Redis SQL核心功能1234DDL 数据定义语言 defined  CREATE DROP ALTERDQL 数据查询语言 query		SELECTDML 数据操作语言 modified	INSERT UPDA">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/guoyimeng/2017/12/18/ThinkPHP/03-模型/"/>
+  <link rel="canonical" href="https://github.com/guoyimeng/2017/12/19/MySQL-01-MySQL基础知识/"/>
 
 
 
 
 
-  <title>模型 | 二萌</title>
+  <title>MySQL基础知识-1 | 二萌</title>
   
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/guoyimeng/2017/12/18/ThinkPHP/03-模型/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/guoyimeng/2017/12/19/MySQL-01-MySQL基础知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lemon">
@@ -294,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">模型</h1>
+          <h1 class="post-title" itemprop="name headline">MySQL基础知识-1</h1>
         
 
         <div class="post-meta">
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-18T09:50:13+08:00">
-                2017-12-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T11:20:16+08:00">
+                2017-12-19
               </time>
             
 
@@ -344,22 +344,11 @@
       
 
       
-        <h1 id="CURD操作"><a href="#CURD操作" class="headerlink" title="CURD操作"></a>CURD操作</h1><h2 id="添加-add"><a href="#添加-add" class="headerlink" title="添加 add"></a>添加 add</h2><ul>
-<li>格式: $model -&gt; add($data);</li>
-</ul>
-<h2 id="修改-save"><a href="#修改-save" class="headerlink" title="修改 save"></a>修改 save</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">格式: $model -&gt; save($data);</span><br><span class="line">参数: 一维关联数组 含有要修改记录的主键id</span><br><span class="line">返回: 0 || 1</span><br></pre></td></tr></table></figure>
-<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- find()</span><br><span class="line">- find(主键id)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>返回 一维数组或者NULL</li>
-</ul>
-<h3 id="select"><a href="#select" class="headerlink" title="select"></a>select</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-&gt; select()</span><br><span class="line">-&gt; select(&apos;主键1, 主键2, 主键3, ..., 主键n&apos;)</span><br><span class="line">-&gt; select(主键id)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>返回 二维数组或者Array(0){}</li>
-</ul>
-<h3 id="find与select"><a href="#find与select" class="headerlink" title="find与select"></a>find与select</h3><ul>
-<li>如果明知道查询结果只有一条 那么使用find更优</li>
-</ul>
-
+        <h1 id="数据库基本概念"><a href="#数据库基本概念" class="headerlink" title="数据库基本概念"></a>数据库基本概念</h1><h2 id="常见数据库"><a href="#常见数据库" class="headerlink" title="常见数据库"></a>常见数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MySQL | SQL Serevr | Oracle | DB2 | Sybase | Access | ...</span><br><span class="line">MongoDB </span><br><span class="line">Memcache | Redis</span><br></pre></td></tr></table></figure>
+<h2 id="SQL核心功能"><a href="#SQL核心功能" class="headerlink" title="SQL核心功能"></a>SQL核心功能</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DDL 数据定义语言 defined  CREATE DROP ALTER</span><br><span class="line">DQL 数据查询语言 query		SELECT</span><br><span class="line">DML 数据操作语言 modified	INSERT UPDATE DELETE</span><br><span class="line">DCL 数据控制语言 control	GRANT REVOKE</span><br></pre></td></tr></table></figure>
+<h2 id="MySQL客户端"><a href="#MySQL客户端" class="headerlink" title="MySQL客户端"></a>MySQL客户端</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmd | phpMyAdmin | Navicat</span><br></pre></td></tr></table></figure>
+<h1 id="MySQL服务器的登录与登出"><a href="#MySQL服务器的登录与登出" class="headerlink" title="MySQL服务器的登录与登出"></a>MySQL服务器的登录与登出</h1><h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><p>##</p>
+<h1 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h1><h1 id="数据表操作"><a href="#数据表操作" class="headerlink" title="数据表操作"></a>数据表操作</h1>
       
     </div>
     
@@ -374,6 +363,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/mysql/" rel="tag"># MySQL</a>
+          
+        </div>
+      
 
       
       
@@ -383,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/18/学习/01-2017年北京PHP开发者年会/" rel="next" title="2017年北京开发者年会">
-                <i class="fa fa-chevron-left"></i> 2017年北京开发者年会
+              <a href="/2017/12/18/ThinkPHP-03-ThinkPHP模型/" rel="next" title="模型">
+                <i class="fa fa-chevron-left"></i> 模型
               </a>
             
           </div>
@@ -392,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/19/MySQL/Day01-MySQL基础知识/" rel="prev" title="Day01-MySQL基础知识">
-                Day01-MySQL基础知识 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -487,7 +478,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -533,7 +524,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CURD操作"><span class="nav-number">1.</span> <span class="nav-text"><a href="#CURD&#x64CD;&#x4F5C;" class="headerlink" title="CURD&#x64CD;&#x4F5C;"></a>CURD&#x64CD;&#x4F5C;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-add"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x6DFB;&#x52A0;-add" class="headerlink" title="&#x6DFB;&#x52A0; add"></a>&#x6DFB;&#x52A0; add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改-save"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x4FEE;&#x6539;-save" class="headerlink" title="&#x4FEE;&#x6539; save"></a>&#x4FEE;&#x6539; save</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#&#x5220;&#x9664;" class="headerlink" title="&#x5220;&#x9664;"></a>&#x5220;&#x9664;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#&#x67E5;&#x8BE2;" class="headerlink" title="&#x67E5;&#x8BE2;"></a>&#x67E5;&#x8BE2;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#find"><span class="nav-number">1.4.1.</span> <span class="nav-text"><a href="#find" class="headerlink" title="find"></a>find</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select"><span class="nav-number">1.4.2.</span> <span class="nav-text"><a href="#select" class="headerlink" title="select"></a>select</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find与select"><span class="nav-number">1.4.3.</span> <span class="nav-text"><a href="#find&#x4E0E;select" class="headerlink" title="find&#x4E0E;select"></a>find&#x4E0E;select</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库基本概念"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6570;&#x636E;&#x5E93;&#x57FA;&#x672C;&#x6982;&#x5FF5;" class="headerlink" title="&#x6570;&#x636E;&#x5E93;&#x57FA;&#x672C;&#x6982;&#x5FF5;"></a>&#x6570;&#x636E;&#x5E93;&#x57FA;&#x672C;&#x6982;&#x5FF5;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见数据库"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x5E38;&#x89C1;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x5E38;&#x89C1;&#x6570;&#x636E;&#x5E93;"></a>&#x5E38;&#x89C1;&#x6570;&#x636E;&#x5E93;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL核心功能"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#SQL&#x6838;&#x5FC3;&#x529F;&#x80FD;" class="headerlink" title="SQL&#x6838;&#x5FC3;&#x529F;&#x80FD;"></a>SQL&#x6838;&#x5FC3;&#x529F;&#x80FD;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL客户端"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#MySQL&#x5BA2;&#x6237;&#x7AEF;" class="headerlink" title="MySQL&#x5BA2;&#x6237;&#x7AEF;"></a>MySQL&#x5BA2;&#x6237;&#x7AEF;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL服务器的登录与登出"><span class="nav-number">2.</span> <span class="nav-text"><a href="#MySQL&#x670D;&#x52A1;&#x5668;&#x7684;&#x767B;&#x5F55;&#x4E0E;&#x767B;&#x51FA;" class="headerlink" title="MySQL&#x670D;&#x52A1;&#x5668;&#x7684;&#x767B;&#x5F55;&#x4E0E;&#x767B;&#x51FA;"></a>MySQL&#x670D;&#x52A1;&#x5668;&#x7684;&#x767B;&#x5F55;&#x4E0E;&#x767B;&#x51FA;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库操作"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;" class="headerlink" title="&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;"></a>&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据表操作"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x6570;&#x636E;&#x8868;&#x64CD;&#x4F5C;" class="headerlink" title="&#x6570;&#x636E;&#x8868;&#x64CD;&#x4F5C;"></a>&#x6570;&#x636E;&#x8868;&#x64CD;&#x4F5C;</span></a></li></ol></div>
             
 
           </div>

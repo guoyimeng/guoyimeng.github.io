@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="PHP," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="韩天峰 - PHP与Swoole未来开源项目 Swoole123456789102012年开始 至今历时5年民主化 RFCSwoole2内置协程 既快又简单 目标：让该项目真正应用到生成中PHP JIT (PHP8.0) 将PHP代码直接转化成机器指令PHP+X： 连接C++与PHPPHP本身是没办法做绘制图形、音频、视频等这些事情的 都是靠写扩展库PHP-Sciter: PHP写GUI程序PHP">
-<meta name="keywords" content="PHP,算法,代码,随笔">
+<meta name="description" content="语言基础PHP(HyperText PreProcessor | 超文本预处理器)  特点运行在服务器上 可以嵌入HTML 开源 免费 跨平台 扩展名 .php注释井号       单行注释 shell风格 //            单行注释 C风格 /**/        多行注释 C风格 变量名区分大小写  关键字和函数名不区分大小写变量常量">
+<meta name="keywords" content="PHP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017年北京开发者年会">
-<meta property="og:url" content="https://github.com/guoyimeng/2017/12/18/学习/01-2017年北京PHP开发者年会/index.html">
+<meta property="og:title" content="01-PHP变量与常量">
+<meta property="og:url" content="https://github.com/guoyimeng/2017/12/16/PHP-01-PHP变量与常量/index.html">
 <meta property="og:site_name" content="二萌">
-<meta property="og:description" content="韩天峰 - PHP与Swoole未来开源项目 Swoole123456789102012年开始 至今历时5年民主化 RFCSwoole2内置协程 既快又简单 目标：让该项目真正应用到生成中PHP JIT (PHP8.0) 将PHP代码直接转化成机器指令PHP+X： 连接C++与PHPPHP本身是没办法做绘制图形、音频、视频等这些事情的 都是靠写扩展库PHP-Sciter: PHP写GUI程序PHP">
+<meta property="og:description" content="语言基础PHP(HyperText PreProcessor | 超文本预处理器)  特点运行在服务器上 可以嵌入HTML 开源 免费 跨平台 扩展名 .php注释井号       单行注释 shell风格 //            单行注释 C风格 /**/        多行注释 C风格 变量名区分大小写  关键字和函数名不区分大小写变量常量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-18T06:01:19.213Z">
+<meta property="og:updated_time" content="2017-12-19T02:37:50.715Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2017年北京开发者年会">
-<meta name="twitter:description" content="韩天峰 - PHP与Swoole未来开源项目 Swoole123456789102012年开始 至今历时5年民主化 RFCSwoole2内置协程 既快又简单 目标：让该项目真正应用到生成中PHP JIT (PHP8.0) 将PHP代码直接转化成机器指令PHP+X： 连接C++与PHPPHP本身是没办法做绘制图形、音频、视频等这些事情的 都是靠写扩展库PHP-Sciter: PHP写GUI程序PHP">
+<meta name="twitter:title" content="01-PHP变量与常量">
+<meta name="twitter:description" content="语言基础PHP(HyperText PreProcessor | 超文本预处理器)  特点运行在服务器上 可以嵌入HTML 开源 免费 跨平台 扩展名 .php注释井号       单行注释 shell风格 //            单行注释 C风格 /**/        多行注释 C风格 变量名区分大小写  关键字和函数名不区分大小写变量常量">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/guoyimeng/2017/12/18/学习/01-2017年北京PHP开发者年会/"/>
+  <link rel="canonical" href="https://github.com/guoyimeng/2017/12/16/PHP-01-PHP变量与常量/"/>
 
 
 
 
 
-  <title>2017年北京开发者年会 | 二萌</title>
+  <title>01-PHP变量与常量 | 二萌</title>
   
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/guoyimeng/2017/12/18/学习/01-2017年北京PHP开发者年会/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/guoyimeng/2017/12/16/PHP-01-PHP变量与常量/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lemon">
@@ -294,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2017年北京开发者年会</h1>
+          <h1 class="post-title" itemprop="name headline">01-PHP变量与常量</h1>
         
 
         <div class="post-meta">
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-18T08:12:45+08:00">
-                2017-12-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-16T15:59:13+08:00">
+                2017-12-16
               </time>
             
 
@@ -316,6 +316,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -344,15 +366,16 @@
       
 
       
-        <h1 id="韩天峰-PHP与Swoole未来"><a href="#韩天峰-PHP与Swoole未来" class="headerlink" title="韩天峰 - PHP与Swoole未来"></a>韩天峰 - <code>PHP与Swoole未来</code></h1><h2 id="开源项目-Swoole"><a href="#开源项目-Swoole" class="headerlink" title="开源项目 Swoole"></a>开源项目 Swoole</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">2012年开始 至今历时5年</span><br><span class="line">民主化 RFC</span><br><span class="line">Swoole2内置协程 既快又简单 目标：让该项目真正应用到生成中</span><br><span class="line"></span><br><span class="line">PHP JIT (PHP8.0) 将PHP代码直接转化成机器指令</span><br><span class="line">PHP+X： 连接C++与PHP</span><br><span class="line">PHP本身是没办法做绘制图形、音频、视频等这些事情的 都是靠写扩展库</span><br><span class="line">PHP-Sciter: PHP写GUI程序</span><br><span class="line">PHPExcel：是目前来说使用量最大的操作Excel的库 但这是PHP写的 无法适用于大量的文件</span><br><span class="line">PHP-Libreoffice：photo操作Word、Excel、PDF  目标：PHP直接调用C来实现</span><br></pre></td></tr></table></figure>
-<h2 id="商业项目"><a href="#商业项目" class="headerlink" title="商业项目"></a>商业项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Swoole Compiler  源代码保护、数据加密、授权、基于AST进行漏洞扫描</span><br><span class="line">Swoole Plus</span><br><span class="line">Swoole lot System</span><br></pre></td></tr></table></figure>
-<h1 id="NeekeGao-大话性能"><a href="#NeekeGao-大话性能" class="headerlink" title="NeekeGao - 大话性能"></a>NeekeGao - <code>大话性能</code></h1><h2 id="SeasLog-JSONNet-Druid-PHP-作者"><a href="#SeasLog-JSONNet-Druid-PHP-作者" class="headerlink" title="SeasLog JSONNet Druid-PHP (作者)"></a>SeasLog JSONNet Druid-PHP (作者)</h2><h2 id="Druid-PHP-适用于大数据方向-大数据组件"><a href="#Druid-PHP-适用于大数据方向-大数据组件" class="headerlink" title="Druid-PHP 适用于大数据方向  大数据组件"></a>Druid-PHP 适用于大数据方向  大数据组件</h2><h2 id="SoLoMo-社交化-本地化-1971-John-Doerr"><a href="#SoLoMo-社交化-本地化-1971-John-Doerr" class="headerlink" title="SoLoMo 社交化 本地化 (1971 John Doerr)"></a>SoLoMo 社交化 本地化 (1971 John Doerr)</h2><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">西直门立交桥 </span><br><span class="line">- 通过队列和阻塞 提交交通效率 降低事故发生率</span><br><span class="line">- 没有红绿灯 不需要交警</span><br><span class="line">将生活关联到我们的开发 工作</span><br></pre></td></tr></table></figure>
-<h2 id="PHP应用模型"><a href="#PHP应用模型" class="headerlink" title="PHP应用模型"></a>PHP应用模型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 应用层 (DB Cache API Log)</span><br><span class="line">- 连接池 批量操作 DB索引 cache分区 读写分离 </span><br><span class="line">- 将日志缓存起来 合并IO 复用连接 并行操作 更快的序列化</span><br><span class="line">-	物理层 (IO Memory CPU Network)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">看鸟哥的PHP大会分享</span><br><span class="line">FasterCGI</span><br></pre></td></tr></table></figure>
-<h2 id="问题思考"><a href="#问题思考" class="headerlink" title="问题思考"></a>问题思考</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CDN ?</span><br><span class="line">Retry ? 代理 与 负载 ?</span><br><span class="line">SQL or NoSQL ?</span><br><span class="line">Cache ?</span><br><span class="line">SOA ? (微服务)</span><br></pre></td></tr></table></figure>
-<h2 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">避免递归、多层循环、频繁IO</span><br><span class="line">善用缓存</span><br><span class="line">慎用锁</span><br><span class="line">恰当的 小力度的使用事务</span><br><span class="line">选择适当的通信方式</span><br><span class="line">合理的使用并行计算</span><br><span class="line">合理的进行异步处理</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>立足于业务、实现于架构、DBA、测试者、运维、统筹管理者的角度</p>
-<h1 id="梅岭"><a href="#梅岭" class="headerlink" title="梅岭"></a>梅岭</h1><h1 id="周-天地汇-互联网-物流"><a href="#周-天地汇-互联网-物流" class="headerlink" title="周 天地汇 互联网+物流"></a>周 <code>天地汇</code> <code>互联网+物流</code></h1>
+        <h1 id="语言基础"><a href="#语言基础" class="headerlink" title="语言基础"></a>语言基础</h1><h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><p>(HyperText PreProcessor | 超文本预处理器) </p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><pre><code>运行在服务器上
+可以嵌入HTML
+开源
+免费
+跨平台
+</code></pre><h2 id="扩展名-php"><a href="#扩展名-php" class="headerlink" title="扩展名 .php"></a>扩展名 .php</h2><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><pre><code>井号       单行注释 shell风格
+//            单行注释 C风格
+/**/        多行注释 C风格
+</code></pre><h2 id="变量名区分大小写-关键字和函数名不区分大小写"><a href="#变量名区分大小写-关键字和函数名不区分大小写" class="headerlink" title="变量名区分大小写  关键字和函数名不区分大小写"></a>变量名区分大小写  关键字和函数名不区分大小写</h2><h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1>
       
     </div>
     
@@ -367,6 +390,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"># PHP</a>
+          
+        </div>
+      
 
       
       
@@ -376,18 +405,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/16/PHP/01-PHP变量与常量/" rel="next" title="01-PHP变量与常量">
-                <i class="fa fa-chevron-left"></i> 01-PHP变量与常量
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/18/ThinkPHP/03-模型/" rel="prev" title="模型">
-                模型 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/18/学习-01-2017年北京PHP开发者年会/" rel="prev" title="2017年北京开发者年会">
+                2017年北京开发者年会 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -480,7 +505,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -526,7 +551,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#韩天峰-PHP与Swoole未来"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x97E9;&#x5929;&#x5CF0;-PHP&#x4E0E;Swoole&#x672A;&#x6765;" class="headerlink" title="&#x97E9;&#x5929;&#x5CF0; - PHP&#x4E0E;Swoole&#x672A;&#x6765;"></a>&#x97E9;&#x5929;&#x5CF0; - <code>PHP&#x4E0E;Swoole&#x672A;&#x6765;</code></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开源项目-Swoole"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x5F00;&#x6E90;&#x9879;&#x76EE;-Swoole" class="headerlink" title="&#x5F00;&#x6E90;&#x9879;&#x76EE; Swoole"></a>&#x5F00;&#x6E90;&#x9879;&#x76EE; Swoole</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#商业项目"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x5546;&#x4E1A;&#x9879;&#x76EE;" class="headerlink" title="&#x5546;&#x4E1A;&#x9879;&#x76EE;"></a>&#x5546;&#x4E1A;&#x9879;&#x76EE;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NeekeGao-大话性能"><span class="nav-number">2.</span> <span class="nav-text"><a href="#NeekeGao-&#x5927;&#x8BDD;&#x6027;&#x80FD;" class="headerlink" title="NeekeGao - &#x5927;&#x8BDD;&#x6027;&#x80FD;"></a>NeekeGao - <code>&#x5927;&#x8BDD;&#x6027;&#x80FD;</code></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SeasLog-JSONNet-Druid-PHP-作者"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#SeasLog-JSONNet-Druid-PHP-&#x4F5C;&#x8005;" class="headerlink" title="SeasLog JSONNet Druid-PHP (&#x4F5C;&#x8005;)"></a>SeasLog JSONNet Druid-PHP (&#x4F5C;&#x8005;)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Druid-PHP-适用于大数据方向-大数据组件"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#Druid-PHP-&#x9002;&#x7528;&#x4E8E;&#x5927;&#x6570;&#x636E;&#x65B9;&#x5411;-&#x5927;&#x6570;&#x636E;&#x7EC4;&#x4EF6;" class="headerlink" title="Druid-PHP &#x9002;&#x7528;&#x4E8E;&#x5927;&#x6570;&#x636E;&#x65B9;&#x5411;  &#x5927;&#x6570;&#x636E;&#x7EC4;&#x4EF6;"></a>Druid-PHP &#x9002;&#x7528;&#x4E8E;&#x5927;&#x6570;&#x636E;&#x65B9;&#x5411;  &#x5927;&#x6570;&#x636E;&#x7EC4;&#x4EF6;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SoLoMo-社交化-本地化-1971-John-Doerr"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#SoLoMo-&#x793E;&#x4EA4;&#x5316;-&#x672C;&#x5730;&#x5316;-1971-John-Doerr" class="headerlink" title="SoLoMo &#x793E;&#x4EA4;&#x5316; &#x672C;&#x5730;&#x5316; (1971 John Doerr)"></a>SoLoMo &#x793E;&#x4EA4;&#x5316; &#x672C;&#x5730;&#x5316; (1971 John Doerr)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#&#x67B6;&#x6784;" class="headerlink" title="&#x67B6;&#x6784;"></a>&#x67B6;&#x6784;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP应用模型"><span class="nav-number">2.5.</span> <span class="nav-text"><a href="#PHP&#x5E94;&#x7528;&#x6A21;&#x578B;" class="headerlink" title="PHP&#x5E94;&#x7528;&#x6A21;&#x578B;"></a>PHP&#x5E94;&#x7528;&#x6A21;&#x578B;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题思考"><span class="nav-number">2.6.</span> <span class="nav-text"><a href="#&#x95EE;&#x9898;&#x601D;&#x8003;" class="headerlink" title="&#x95EE;&#x9898;&#x601D;&#x8003;"></a>&#x95EE;&#x9898;&#x601D;&#x8003;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分享"><span class="nav-number">2.7.</span> <span class="nav-text"><a href="#&#x5206;&#x4EAB;" class="headerlink" title="&#x5206;&#x4EAB;"></a>&#x5206;&#x4EAB;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#梅岭"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x6885;&#x5CAD;" class="headerlink" title="&#x6885;&#x5CAD;"></a>&#x6885;&#x5CAD;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#周-天地汇-互联网-物流"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x5468;-&#x5929;&#x5730;&#x6C47;-&#x4E92;&#x8054;&#x7F51;-&#x7269;&#x6D41;" class="headerlink" title="&#x5468; &#x5929;&#x5730;&#x6C47; &#x4E92;&#x8054;&#x7F51;+&#x7269;&#x6D41;"></a>&#x5468; <code>&#x5929;&#x5730;&#x6C47;</code> <code>&#x4E92;&#x8054;&#x7F51;+&#x7269;&#x6D41;</code></span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#语言基础"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x8BED;&#x8A00;&#x57FA;&#x7840;" class="headerlink" title="&#x8BED;&#x8A00;&#x57FA;&#x7840;"></a>&#x8BED;&#x8A00;&#x57FA;&#x7840;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特点"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x7279;&#x70B9;" class="headerlink" title="&#x7279;&#x70B9;"></a>&#x7279;&#x70B9;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展名-php"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#&#x6269;&#x5C55;&#x540D;-php" class="headerlink" title="&#x6269;&#x5C55;&#x540D; .php"></a>&#x6269;&#x5C55;&#x540D; .php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#&#x6CE8;&#x91CA;" class="headerlink" title="&#x6CE8;&#x91CA;"></a>&#x6CE8;&#x91CA;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量名区分大小写-关键字和函数名不区分大小写"><span class="nav-number">1.5.</span> <span class="nav-text"><a href="#&#x53D8;&#x91CF;&#x540D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;-&#x5173;&#x952E;&#x5B57;&#x548C;&#x51FD;&#x6570;&#x540D;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;" class="headerlink" title="&#x53D8;&#x91CF;&#x540D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;  &#x5173;&#x952E;&#x5B57;&#x548C;&#x51FD;&#x6570;&#x540D;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;"></a>&#x53D8;&#x91CF;&#x540D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;  &#x5173;&#x952E;&#x5B57;&#x548C;&#x51FD;&#x6570;&#x540D;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x53D8;&#x91CF;" class="headerlink" title="&#x53D8;&#x91CF;"></a>&#x53D8;&#x91CF;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常量"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x5E38;&#x91CF;" class="headerlink" title="&#x5E38;&#x91CF;"></a>&#x5E38;&#x91CF;</span></a></li></ol></div>
             
 
           </div>
