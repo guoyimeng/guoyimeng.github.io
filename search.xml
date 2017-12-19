@@ -5,10 +5,10 @@
     <url>%2F2017%2F12%2F19%2FMySQL-01-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
     <content type="text"><![CDATA[数据库基本概念常见数据库123MySQL | SQL Serevr | Oracle | DB2 | Sybase | Access | ...MongoDB Memcache | Redis SQL核心功能1234DDL 数据定义语言 defined CREATE DROP ALTERDQL 数据查询语言 query SELECTDML 数据操作语言 modified INSERT UPDATE DELETEDCL 数据控制语言 control GRANT REVOKE MySQL客户端1cmd | phpMyAdmin | Navicat MySQL服务器的登录与登出MySQL## 数据库操作数据表操作]]></content>
       <categories>
-        <category>MySQL</category>
+        <category>mysql</category>
       </categories>
       <tags>
-        <tag>MySQL</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -30,8 +30,8 @@
         <category>学习</category>
       </categories>
       <tags>
-        <tag>PHP</tag>
         <tag>峰会</tag>
+        <tag>php</tag>
       </tags>
   </entry>
   <entry>
@@ -39,10 +39,10 @@
     <url>%2F2017%2F12%2F16%2FPHP-01-PHP%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F%2F</url>
     <content type="text"><![CDATA[语言基础PHP(HyperText PreProcessor | 超文本预处理器) 特点运行在服务器上 可以嵌入HTML 开源 免费 跨平台 扩展名 .php注释井号 单行注释 shell风格 // 单行注释 C风格 /**/ 多行注释 C风格 变量名区分大小写 关键字和函数名不区分大小写变量常量]]></content>
       <categories>
-        <category>PHP</category>
+        <category>php</category>
       </categories>
       <tags>
-        <tag>PHP</tag>
+        <tag>php</tag>
       </tags>
   </entry>
 </search>
