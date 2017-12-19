@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="二萌">
 <meta property="og:description" content="1 修改数据表1.1 添加字段123456alter table 表名 add 字段名 数据类型 列属性 位置;位置:	不写					表示插在所有字段的后面	first					表示插在所有字段的前面	after field		表示插在指定字段的后面 1.2 修改字段列属性 、位置12345mysql&amp;gt; alter table 表名 modify 字段名 数据类型 列属性 位置;说明:mod">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-19T10:17:43.298Z">
+<meta property="og:updated_time" content="2017-12-19T10:21:17.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL基础知识-02">
 <meta name="twitter:description" content="1 修改数据表1.1 添加字段123456alter table 表名 add 字段名 数据类型 列属性 位置;位置:	不写					表示插在所有字段的后面	first					表示插在所有字段的前面	after field		表示插在指定字段的后面 1.2 修改字段列属性 、位置12345mysql&amp;gt; alter table 表名 modify 字段名 数据类型 列属性 位置;说明:mod">
@@ -408,7 +408,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="1-8-批量操作"><a href="#1-8-批量操作" class="headerlink" title="1.8 批量操作"></a>1.8 批量操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add ...., add ..., drop ..., drop ..., modify ..., modify ...;</span><br></pre></td></tr></table></figure>
+<h2 id="1-8-批量操作"><a href="#1-8-批量操作" class="headerlink" title="1.8 批量操作"></a>1.8 批量操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 </span><br><span class="line">add ..., </span><br><span class="line">add ..., </span><br><span class="line">drop ..., </span><br><span class="line">drop ..., </span><br><span class="line">modify ..., </span><br><span class="line">modify ...;</span><br></pre></td></tr></table></figure>
 <h1 id="2-MySQL存储引擎介绍"><a href="#2-MySQL存储引擎介绍" class="headerlink" title="2 MySQL存储引擎介绍"></a>2 MySQL存储引擎介绍</h1><h2 id="2-1-存储引擎"><a href="#2-1-存储引擎" class="headerlink" title="2.1 存储引擎"></a>2.1 存储引擎</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MyISAM | InnoDB | Archive | Memory | CSV | BlackHole | ...</span><br></pre></td></tr></table></figure>
 <h2 id="2-2-InnoDB-与-MyISAM-的区别"><a href="#2-2-InnoDB-与-MyISAM-的区别" class="headerlink" title="2.2 InnoDB 与 MyISAM 的区别"></a>2.2 InnoDB 与 MyISAM 的区别</h2><table>
 <thead>
