@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="二萌">
 <meta property="og:description" content="MySQL常见的存储引擎 MyISAM InnoDB Memory     Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive    做日志归档 …  两大存储引擎MyISAM和InnoDB的比较    MyISAM InnoDB     索引结构 非聚簇结构 索引和数据不存放在一起 聚簇结构 索引和数据存放在一起   普通索引 普通索引的数据">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-22T04:04:46.498Z">
+<meta property="og:updated_time" content="2017-12-22T04:08:30.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL两大存储引擎的区别">
 <meta name="twitter:description" content="MySQL常见的存储引擎 MyISAM InnoDB Memory     Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive    做日志归档 …  两大存储引擎MyISAM和InnoDB的比较    MyISAM InnoDB     索引结构 非聚簇结构 索引和数据不存放在一起 聚簇结构 索引和数据存放在一起   普通索引 普通索引的数据">
@@ -414,7 +414,7 @@
 <td style="text-align:center">使用命令来来备份数据表</td>
 </tr>
 <tr>
-<td style="text-align:center">全文索引</td>
+<td style="text-align:center">全文检索</td>
 <td style="text-align:center">支持</td>
 <td style="text-align:center">不支持</td>
 </tr>
@@ -434,12 +434,12 @@
 <td style="text-align:center">行锁    不支持表锁 但是当行锁加载索引列上的时候 MySQL服务器会给InnoDB表加上表锁</td>
 </tr>
 <tr>
-<td style="text-align:center">查询效率</td>
+<td style="text-align:center">DQL效率</td>
 <td style="text-align:center">稍慢</td>
 <td style="text-align:center">稍快</td>
 </tr>
 <tr>
-<td style="text-align:center">插入效率</td>
+<td style="text-align:center">DML效率</td>
 <td style="text-align:center">快 相比InnoDB 其不需要对主键ID排序 直接插入即可</td>
 <td style="text-align:center">稍慢 因为在插入数据的时候 会先对主键ID进行排序后再加入</td>
 </tr>

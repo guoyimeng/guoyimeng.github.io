@@ -15,7 +15,7 @@
   <entry>
     <title><![CDATA[MySQL两大存储引擎的区别]]></title>
     <url>%2F2017%2F12%2F22%2FMySQL-03-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
-    <content type="text"><![CDATA[MySQL常见的存储引擎 MyISAM InnoDB Memory Merge 可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive 做日志归档 … 两大存储引擎MyISAM和InnoDB的比较 MyISAM InnoDB 索引结构 非聚簇结构 索引和数据不存放在一起 聚簇结构 索引和数据存放在一起 普通索引 普通索引的数据区存放的是表数据的物理地址 使用普通索引查找数据与使用主键索引查找数据效果一样 普通索引的数据区存放的是主键信息 使用普通索引查找数据的时候 出现”二次遍历”的现象 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 两个文件 .frm存放表结构 默认情况下所有的InnoDB表的索引和数据都存放在ibdata文件中 数据备份 复制粘贴文件即可 使用命令来来备份数据表 全文索引 支持 不支持 事务 不支持 支持 外键 不支持 支持 锁机制 表锁 行锁 不支持表锁 但是当行锁加载索引列上的时候 MySQL服务器会给InnoDB表加上表锁 查询效率 稍慢 稍快 插入效率 快 相比InnoDB 其不需要对主键ID排序 直接插入即可 稍慢 因为在插入数据的时候 会先对主键ID进行排序后再加入 select count(*) 快 MyISAM存储了记录总数 慢 需要全表扫描]]></content>
+    <content type="text"><![CDATA[MySQL常见的存储引擎 MyISAM InnoDB Memory Merge 可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive 做日志归档 … 两大存储引擎MyISAM和InnoDB的比较 MyISAM InnoDB 索引结构 非聚簇结构 索引和数据不存放在一起 聚簇结构 索引和数据存放在一起 普通索引 普通索引的数据区存放的是表数据的物理地址 使用普通索引查找数据与使用主键索引查找数据效果一样 普通索引的数据区存放的是主键信息 使用普通索引查找数据的时候 出现”二次遍历”的现象 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 两个文件 .frm存放表结构 默认情况下所有的InnoDB表的索引和数据都存放在ibdata文件中 数据备份 复制粘贴文件即可 使用命令来来备份数据表 全文检索 支持 不支持 事务 不支持 支持 外键 不支持 支持 锁机制 表锁 行锁 不支持表锁 但是当行锁加载索引列上的时候 MySQL服务器会给InnoDB表加上表锁 DQL效率 稍慢 稍快 DML效率 快 相比InnoDB 其不需要对主键ID排序 直接插入即可 稍慢 因为在插入数据的时候 会先对主键ID进行排序后再加入 select count(*) 快 MyISAM存储了记录总数 慢 需要全表扫描]]></content>
       <categories>
         <category>MySQL</category>
       </categories>
