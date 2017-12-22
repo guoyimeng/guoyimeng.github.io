@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MySQL两大存储引擎的区别]]></title>
+    <url>%2F2017%2F12%2F22%2FMySQL-03-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[MySQL常见的存储引擎123456MyISAMInnoDBMemoryMerge 可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用Archive... 两大存储引擎MyISAM和InnoDB的比较MyISAM 索引结构 非聚簇结构 索引和数据不存放在一起 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 数据备份 直接复制拷贝对应的三个文件即可 InnoDB 索引结构 聚簇结构 索引和数据存放在一起 文件组成 两个文件 .frm存放表结构 默认情况下所有的InnoDB表的索引和数据都存放在ibdata文件中 数据备份 需要使用命令mysqldump/mysql来做备份]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>存储引擎</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL基础知识-02]]></title>
     <url>%2F2017%2F12%2F19%2FMySQL-02-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
-    <content type="text"><![CDATA[1 修改数据表1.1 添加字段123456alter table 表名 add 字段名 数据类型 列属性 位置;位置: 不写 表示插在所有字段的后面 first 表示插在所有字段的前面 after field 表示插在指定字段的后面 1.2 修改字段列属性 、位置12345mysql&gt; alter table 表名 modify 字段名 数据类型 列属性 位置;说明:modify 不能修改字段名字change 可以修改字段名字 1.3 修改字段列属性、位置或字段名字1mysql&gt; alter table 表名 change 旧字段名 新字段名 数据类型 列属性 位置; 1.4 删除字段1mysql&gt; alter table 表名 drop 字段名; 1.5 修改表名12mysql&gt; alter table 旧表名 rename [to] 新表名;mysql&gt; rename 旧表名 to 新表名; 1.6 移动数据表12mysql&gt; alter table 旧表名 rename [to] 新库名.表名;mysql&gt; rename 旧表名 to 新库名.表名; 1.7 复制表结构 方式一 方式二 语法 create table 表名 select * from 旧表名; create table 表名 like 旧表名; 结果 新表和旧表的数据一样 但是主键信息丢失 新表和旧表结构一样 但是数据丢失 解决 alter table 新表名 modify 主键字段 数据类型 auto_increment primary key first; insert into 新表名 select * from 旧表名; 1.8 批量操作1234567alter table 表名 add ..., add ..., drop ..., drop ..., modify ..., modify ...; 2 MySQL存储引擎介绍2.1 存储引擎1MyISAM | InnoDB | Archive | Memory | CSV | BlackHole | ... 2.2 InnoDB 与 MyISAM 的区别 MyISAM InnoDB 备份 复制粘贴文件即可 使用命令来来备份数据表 文件 表结构.frm 索引.myi 数据.myd 表结构.frm 索引和数据在一个文件 全文检索 支持 不支持 外键 不支持 支持 事务 不支持 支持 锁 表锁 行锁 查询效率 较快 插入效率 较快 3 MySQL字符集与校对规则12 4 数据表操作12]]></content>
+    <content type="text"><![CDATA[1 修改数据表1.1 添加字段123456alter table 表名 add 字段名 数据类型 列属性 位置;位置: 不写 表示插在所有字段的后面 first 表示插在所有字段的前面 after field 表示插在指定字段的后面 1.2 修改字段列属性 、位置12345mysql&gt; alter table 表名 modify 字段名 数据类型 列属性 位置;说明:modify 不能修改字段名字change 可以修改字段名字 1.3 修改字段列属性、位置或字段名字1mysql&gt; alter table 表名 change 旧字段名 新字段名 数据类型 列属性 位置; 1.4 删除字段1mysql&gt; alter table 表名 drop 字段名; 1.5 修改表名12mysql&gt; alter table 旧表名 rename [to] 新表名;mysql&gt; rename 旧表名 to 新表名; 1.6 移动数据表12mysql&gt; alter table 旧表名 rename [to] 新库名.表名;mysql&gt; rename 旧表名 to 新库名.表名; 1.7 复制表结构 方式一 方式二 语法 create table 表名 select * from 旧表名; create table 表名 like 旧表名; 结果 新表和旧表的数据一样 但是主键信息丢失 新表和旧表结构一样 但是数据丢失 解决 alter table 新表名 modify 主键字段 数据类型 auto_increment primary key first; insert into 新表名 select * from 旧表名; 1.8 批量操作1234567alter table 表名 add ..., add ..., drop ..., drop ..., modify ..., modify ...; 2 MySQL存储引擎介绍2.1 存储引擎1MyISAM | InnoDB | Archive | Memory | CSV | BlackHole | ... 2.2 InnoDB 与 MyISAM 的区别 MyISAM InnoDB 备份 复制粘贴文件即可 使用命令来来备份数据表 文件 表结构.frm 索引.myi 数据.myd 表结构.frm 索引和数据在一个文件 全文检索 支持 不支持 外键 不支持 支持 事务 不支持 支持 锁 表锁 行锁 查询效率 较快 插入效率 较快 3 MySQL字符集与校对规则1234一个字符集 可以有很多 校对规则一个校对规则 只对应一个 字符集校对规则 影响查询的结果 4 MySQL数据类型4.1 分类 类型 具体 说明 整型 tinyint 1B -128~127 0~128 smallint mediumint int 4B bigint 8B 浮点型 float(M,D) 单精度小数 4B 6位 double(M,D) 双精度小数 8B 12位 decimal(M,D) 定点小数 若M&gt;D,则占(M+2)B 精确 字符型 char 定长字符 varchar 变长字符 enum 枚举 set 集合 文本型 text longtext 时间型 date datetime timestamp 整型 tinyint 1 smallint mediumint int bigint 浮点型 float double decimal 字符型 char varchar 文本型 text 日期时间型 date datetime timestamp]]></content>
       <categories>
         <category>MySQL</category>
       </categories>
