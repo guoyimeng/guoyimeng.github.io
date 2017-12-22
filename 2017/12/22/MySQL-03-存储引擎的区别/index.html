@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="MySQL常见的存储引擎123456MyISAMInnoDBMemoryMerge		可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用Archive... 两大存储引擎MyISAM和InnoDB的比较MyISAM 索引结构 非聚簇结构 索引和数据不存放在一起 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 数据备份 直接复制拷贝对应的三个文件即可  Inn">
+<meta name="description" content="MySQL常见的存储引擎 MyISAM InnoDB Memory     Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive    做日志归档 …  两大存储引擎MyISAM和InnoDB的比较MyISAM 索引结构 非聚簇结构 索引和数据不存放在一起 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 数据备份 直接">
 <meta name="keywords" content="MySQL,存储引擎">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL两大存储引擎的区别">
 <meta property="og:url" content="https://github.com/guoyimeng/2017/12/22/MySQL-03-存储引擎的区别/index.html">
 <meta property="og:site_name" content="二萌">
-<meta property="og:description" content="MySQL常见的存储引擎123456MyISAMInnoDBMemoryMerge		可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用Archive... 两大存储引擎MyISAM和InnoDB的比较MyISAM 索引结构 非聚簇结构 索引和数据不存放在一起 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 数据备份 直接复制拷贝对应的三个文件即可  Inn">
+<meta property="og:description" content="MySQL常见的存储引擎 MyISAM InnoDB Memory     Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive    做日志归档 …  两大存储引擎MyISAM和InnoDB的比较MyISAM 索引结构 非聚簇结构 索引和数据不存放在一起 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 数据备份 直接">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-22T00:46:49.133Z">
+<meta property="og:updated_time" content="2017-12-22T00:54:36.099Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL两大存储引擎的区别">
-<meta name="twitter:description" content="MySQL常见的存储引擎123456MyISAMInnoDBMemoryMerge		可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用Archive... 两大存储引擎MyISAM和InnoDB的比较MyISAM 索引结构 非聚簇结构 索引和数据不存放在一起 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 数据备份 直接复制拷贝对应的三个文件即可  Inn">
+<meta name="twitter:description" content="MySQL常见的存储引擎 MyISAM InnoDB Memory     Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive    做日志归档 …  两大存储引擎MyISAM和InnoDB的比较MyISAM 索引结构 非聚簇结构 索引和数据不存放在一起 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 数据备份 直接">
 
 
 
@@ -376,16 +376,35 @@
       
 
       
-        <h1 id="MySQL常见的存储引擎"><a href="#MySQL常见的存储引擎" class="headerlink" title="MySQL常见的存储引擎"></a>MySQL常见的存储引擎</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MyISAM</span><br><span class="line">InnoDB</span><br><span class="line">Memory</span><br><span class="line">Merge		可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用</span><br><span class="line">Archive</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+        <h1 id="MySQL常见的存储引擎"><a href="#MySQL常见的存储引擎" class="headerlink" title="MySQL常见的存储引擎"></a>MySQL常见的存储引擎</h1><ul>
+<li>MyISAM</li>
+<li>InnoDB</li>
+<li>Memory    </li>
+<li>Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用</li>
+<li>Archive    做日志归档</li>
+<li>…</li>
+</ul>
 <h1 id="两大存储引擎MyISAM和InnoDB的比较"><a href="#两大存储引擎MyISAM和InnoDB的比较" class="headerlink" title="两大存储引擎MyISAM和InnoDB的比较"></a>两大存储引擎MyISAM和InnoDB的比较</h1><h2 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h2><ul>
 <li>索引结构 非聚簇结构 索引和数据不存放在一起</li>
 <li>文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据</li>
 <li>数据备份 直接复制拷贝对应的三个文件即可</li>
+<li>全文索引 支持</li>
+<li>事务         不支持</li>
+<li>外键         不支持</li>
+<li>锁机制     表锁</li>
+<li>查询效率 稍慢</li>
+<li>插入效率 稍快 相比InnoDB 其不需要对主键ID排序 直接插入即可</li>
 </ul>
 <h2 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h2><ul>
 <li>索引结构 聚簇结构 索引和数据存放在一起</li>
 <li>文件组成 两个文件 .frm存放表结构 默认情况下所有的InnoDB表的索引和数据都存放在ibdata文件中</li>
 <li>数据备份 需要使用命令mysqldump/mysql来做备份</li>
+<li>全文索引 不支持</li>
+<li>事务         支持</li>
+<li>外键         支持</li>
+<li>锁机制     行锁 不支持表锁 但是当行锁加载索引列上的时候 MySQL服务器会给InnoDB表加上表锁</li>
+<li>查询效率 稍快</li>
+<li>插入效率 稍慢 因为在插入数据的时候 会先对主键ID进行排序后再加入</li>
 </ul>
 
       
