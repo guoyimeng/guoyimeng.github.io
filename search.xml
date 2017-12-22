@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[服务器架构-01]]></title>
+    <url>%2F2017%2F12%2F22%2F%E6%9C%8D%E5%8A%A1%E5%99%A8-01-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84%2F</url>
+    <content type="text"><![CDATA[常见架构形式 LAMP LNMP LNMPA 服务器软件介绍 Apache Nginx Lighttpd IIS LNMPA架构介绍shell脚本两种形式 命令行输入的 以.sh为后缀结尾的文件 (偏重这个解释) 简单理解将以前在命令行中一行一行输入的命令写在一个文件中然后一次性执行]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>服务器</tag>
+        <tag>架构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL两大存储引擎的区别]]></title>
     <url>%2F2017%2F12%2F22%2FMySQL-03-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
-    <content type="text"><![CDATA[MySQL常见的存储引擎 MyISAM InnoDB Memory Merge 可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive 做日志归档 … 两大存储引擎MyISAM和InnoDB的比较MyISAM 索引结构 非聚簇结构 索引和数据不存放在一起 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 数据备份 直接复制拷贝对应的三个文件即可 全文索引 支持 事务 不支持 外键 不支持 锁机制 表锁 查询效率 稍慢 插入效率 稍快 相比InnoDB 其不需要对主键ID排序 直接插入即可 InnoDB 索引结构 聚簇结构 索引和数据存放在一起 文件组成 两个文件 .frm存放表结构 默认情况下所有的InnoDB表的索引和数据都存放在ibdata文件中 数据备份 需要使用命令mysqldump/mysql来做备份 全文索引 不支持 事务 支持 外键 支持 锁机制 行锁 不支持表锁 但是当行锁加载索引列上的时候 MySQL服务器会给InnoDB表加上表锁 查询效率 稍快 插入效率 稍慢 因为在插入数据的时候 会先对主键ID进行排序后再加入]]></content>
+    <content type="text"><![CDATA[MySQL常见的存储引擎 MyISAM InnoDB Memory Merge 可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive 做日志归档 … 两大存储引擎MyISAM和InnoDB的比较MyISAM 索引结构 非聚簇结构 索引和数据不存放在一起 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 数据备份 直接复制拷贝对应的三个文件即可 全文索引 支持 事务 不支持 外键 不支持 锁机制 表锁 查询效率 稍慢 插入效率 稍快 相比InnoDB 其不需要对主键ID排序 直接插入即可 InnoDB 索引结构 聚簇结构 索引和数据存放在一起 文件组成 两个文件 .frm存放表结构 默认情况下所有的InnoDB表的索引和数据都存放在ibdata文件中 数据备份 需要使用命令mysqldump/mysql来做备份 全文索引 不支持 事务 支持 外键 支持 锁机制 行锁 不支持表锁 但是当行锁加载索引列上的时候 MySQL服务器会给InnoDB表加上表锁 查询效率 稍快 插入效率 稍慢 因为在插入数据的时候 会先对主键ID进行排序后再加入 MyISAM InnoDB 索引结构 非聚簇结构 索引和数据不存放在一起 聚簇结构 索引和数据存放在一起 备份 复制粘贴文件即可 使用命令来来备份数据表 文件 表结构.frm 索引.myi 数据.myd 表结构.frm 索引和数据在一个文件 全文索引 支持 不支持 外键 不支持 支持 事务 不支持 支持 锁机制 表锁 行锁 查询效率 较快 插入效率 较快]]></content>
       <categories>
         <category>MySQL</category>
       </categories>

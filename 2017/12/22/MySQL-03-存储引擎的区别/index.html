@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="二萌">
 <meta property="og:description" content="MySQL常见的存储引擎 MyISAM InnoDB Memory     Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive    做日志归档 …  两大存储引擎MyISAM和InnoDB的比较MyISAM 索引结构 非聚簇结构 索引和数据不存放在一起 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 数据备份 直接">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-22T00:54:36.099Z">
+<meta property="og:updated_time" content="2017-12-22T01:06:46.786Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL两大存储引擎的区别">
 <meta name="twitter:description" content="MySQL常见的存储引擎 MyISAM InnoDB Memory     Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive    做日志归档 …  两大存储引擎MyISAM和InnoDB的比较MyISAM 索引结构 非聚簇结构 索引和数据不存放在一起 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 数据备份 直接">
@@ -406,6 +406,61 @@
 <li>查询效率 稍快</li>
 <li>插入效率 稍慢 因为在插入数据的时候 会先对主键ID进行排序后再加入</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">MyISAM</th>
+<th style="text-align:center">InnoDB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">索引结构</td>
+<td style="text-align:center">非聚簇结构 索引和数据不存放在一起</td>
+<td style="text-align:center">聚簇结构 索引和数据存放在一起</td>
+</tr>
+<tr>
+<td style="text-align:center">备份</td>
+<td style="text-align:center">复制粘贴文件即可</td>
+<td style="text-align:center">使用命令来来备份数据表</td>
+</tr>
+<tr>
+<td style="text-align:center">文件</td>
+<td style="text-align:center">表结构.frm 索引.myi 数据.myd</td>
+<td style="text-align:center">表结构.frm 索引和数据在一个文件</td>
+</tr>
+<tr>
+<td style="text-align:center">全文索引</td>
+<td style="text-align:center">支持</td>
+<td style="text-align:center">不支持</td>
+</tr>
+<tr>
+<td style="text-align:center">外键</td>
+<td style="text-align:center">不支持</td>
+<td style="text-align:center">支持</td>
+</tr>
+<tr>
+<td style="text-align:center">事务</td>
+<td style="text-align:center">不支持</td>
+<td style="text-align:center">支持</td>
+</tr>
+<tr>
+<td style="text-align:center">锁机制</td>
+<td style="text-align:center">表锁</td>
+<td style="text-align:center">行锁</td>
+</tr>
+<tr>
+<td style="text-align:center">查询效率</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">较快</td>
+</tr>
+<tr>
+<td style="text-align:center">插入效率</td>
+<td style="text-align:center">较快</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -447,6 +502,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/22/服务器-01-服务器架构/" rel="prev" title="服务器架构-01">
+                服务器架构-01 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -529,7 +588,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -540,7 +599,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -551,7 +610,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
