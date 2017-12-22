@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="MySQL常见的存储引擎 MyISAM InnoDB Memory     Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive    做日志归档 …  两大存储引擎MyISAM和InnoDB的比较MyISAM 索引结构 非聚簇结构 索引和数据不存放在一起 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 数据备份 直接">
+<meta name="description" content="MySQL常见的存储引擎 MyISAM InnoDB Memory     Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive    做日志归档 …  两大存储引擎MyISAM和InnoDB的比较    MyISAM InnoDB     索引结构 非聚簇结构 索引和数据不存放在一起 聚簇结构 索引和数据存放在一起   普通索引 普通索引的数据">
 <meta name="keywords" content="MySQL,存储引擎">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL两大存储引擎的区别">
 <meta property="og:url" content="https://github.com/guoyimeng/2017/12/22/MySQL-03-存储引擎的区别/index.html">
 <meta property="og:site_name" content="二萌">
-<meta property="og:description" content="MySQL常见的存储引擎 MyISAM InnoDB Memory     Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive    做日志归档 …  两大存储引擎MyISAM和InnoDB的比较MyISAM 索引结构 非聚簇结构 索引和数据不存放在一起 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 数据备份 直接">
+<meta property="og:description" content="MySQL常见的存储引擎 MyISAM InnoDB Memory     Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive    做日志归档 …  两大存储引擎MyISAM和InnoDB的比较    MyISAM InnoDB     索引结构 非聚簇结构 索引和数据不存放在一起 聚簇结构 索引和数据存放在一起   普通索引 普通索引的数据">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-22T01:06:46.786Z">
+<meta property="og:updated_time" content="2017-12-22T04:03:30.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL两大存储引擎的区别">
-<meta name="twitter:description" content="MySQL常见的存储引擎 MyISAM InnoDB Memory     Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive    做日志归档 …  两大存储引擎MyISAM和InnoDB的比较MyISAM 索引结构 非聚簇结构 索引和数据不存放在一起 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 数据备份 直接">
+<meta name="twitter:description" content="MySQL常见的存储引擎 MyISAM InnoDB Memory     Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive    做日志归档 …  两大存储引擎MyISAM和InnoDB的比较    MyISAM InnoDB     索引结构 非聚簇结构 索引和数据不存放在一起 聚簇结构 索引和数据存放在一起   普通索引 普通索引的数据">
 
 
 
@@ -384,29 +384,7 @@
 <li>Archive    做日志归档</li>
 <li>…</li>
 </ul>
-<h1 id="两大存储引擎MyISAM和InnoDB的比较"><a href="#两大存储引擎MyISAM和InnoDB的比较" class="headerlink" title="两大存储引擎MyISAM和InnoDB的比较"></a>两大存储引擎MyISAM和InnoDB的比较</h1><h2 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h2><ul>
-<li>索引结构 非聚簇结构 索引和数据不存放在一起</li>
-<li>文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据</li>
-<li>数据备份 直接复制拷贝对应的三个文件即可</li>
-<li>全文索引 支持</li>
-<li>事务         不支持</li>
-<li>外键         不支持</li>
-<li>锁机制     表锁</li>
-<li>查询效率 稍慢</li>
-<li>插入效率 稍快 相比InnoDB 其不需要对主键ID排序 直接插入即可</li>
-</ul>
-<h2 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h2><ul>
-<li>索引结构 聚簇结构 索引和数据存放在一起</li>
-<li>文件组成 两个文件 .frm存放表结构 默认情况下所有的InnoDB表的索引和数据都存放在ibdata文件中</li>
-<li>数据备份 需要使用命令mysqldump/mysql来做备份</li>
-<li>全文索引 不支持</li>
-<li>事务         支持</li>
-<li>外键         支持</li>
-<li>锁机制     行锁 不支持表锁 但是当行锁加载索引列上的时候 MySQL服务器会给InnoDB表加上表锁</li>
-<li>查询效率 稍快</li>
-<li>插入效率 稍慢 因为在插入数据的时候 会先对主键ID进行排序后再加入</li>
-</ul>
-<table>
+<h1 id="两大存储引擎MyISAM和InnoDB的比较"><a href="#两大存储引擎MyISAM和InnoDB的比较" class="headerlink" title="两大存储引擎MyISAM和InnoDB的比较"></a>两大存储引擎MyISAM和InnoDB的比较</h1><table>
 <thead>
 <tr>
 <th style="text-align:center"></th>
@@ -421,14 +399,19 @@
 <td style="text-align:center">聚簇结构 索引和数据存放在一起</td>
 </tr>
 <tr>
-<td style="text-align:center">备份</td>
-<td style="text-align:center">复制粘贴文件即可</td>
-<td style="text-align:center">使用命令来来备份数据表</td>
+<td style="text-align:center">普通索引</td>
+<td style="text-align:center">普通索引的数据区存放的是表数据的物理地址 使用普通索引查找数据与使用主键索引查找数据效果一样</td>
+<td style="text-align:center">普通索引的数据区存放的是主键信息 使用普通索引查找数据的时候 出现”二次遍历”的现象</td>
 </tr>
 <tr>
-<td style="text-align:center">文件</td>
-<td style="text-align:center">表结构.frm 索引.myi 数据.myd</td>
-<td style="text-align:center">表结构.frm 索引和数据在一个文件</td>
+<td style="text-align:center">文件组成</td>
+<td style="text-align:center">三个文件 .frm存放表结构 .myi存放索引 .myd存放数据</td>
+<td style="text-align:center">两个文件 .frm存放表结构 默认情况下所有的InnoDB表的索引和数据都存放在ibdata文件中</td>
+</tr>
+<tr>
+<td style="text-align:center">数据备份</td>
+<td style="text-align:center">复制粘贴文件即可</td>
+<td style="text-align:center">使用命令来来备份数据表</td>
 </tr>
 <tr>
 <td style="text-align:center">全文索引</td>
@@ -436,28 +419,34 @@
 <td style="text-align:center">不支持</td>
 </tr>
 <tr>
-<td style="text-align:center">外键</td>
+<td style="text-align:center">事务</td>
 <td style="text-align:center">不支持</td>
 <td style="text-align:center">支持</td>
 </tr>
 <tr>
-<td style="text-align:center">事务</td>
+<td style="text-align:center">外键</td>
 <td style="text-align:center">不支持</td>
 <td style="text-align:center">支持</td>
 </tr>
 <tr>
 <td style="text-align:center">锁机制</td>
 <td style="text-align:center">表锁</td>
-<td style="text-align:center">行锁</td>
+<td style="text-align:center">行锁    不支持表锁 但是当行锁加载索引列上的时候 MySQL服务器会给InnoDB表加上表锁</td>
 </tr>
 <tr>
 <td style="text-align:center">查询效率</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">较快</td>
+<td style="text-align:center">稍慢</td>
+<td style="text-align:center">稍快</td>
 </tr>
 <tr>
 <td style="text-align:center">插入效率</td>
-<td style="text-align:center">较快</td>
+<td style="text-align:center">快 相比InnoDB 其不需要对主键ID排序 直接插入即可</td>
+<td style="text-align:center">稍慢 因为在插入数据的时候 会先对主键ID进行排序后再加入</td>
+</tr>
+<tr>
+<td style="text-align:center">统计总数</td>
+<td style="text-align:center">快 MyISAM存储了记录总数</td>
+<td style="text-align:center">慢 需要全表扫描</td>
 </tr>
 </tbody>
 </table>
@@ -645,7 +634,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL常见的存储引擎"><span class="nav-number">1.</span> <span class="nav-text"><a href="#MySQL&#x5E38;&#x89C1;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;" class="headerlink" title="MySQL&#x5E38;&#x89C1;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;"></a>MySQL&#x5E38;&#x89C1;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#两大存储引擎MyISAM和InnoDB的比较"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x4E24;&#x5927;&#x5B58;&#x50A8;&#x5F15;&#x64CE;MyISAM&#x548C;InnoDB&#x7684;&#x6BD4;&#x8F83;" class="headerlink" title="&#x4E24;&#x5927;&#x5B58;&#x50A8;&#x5F15;&#x64CE;MyISAM&#x548C;InnoDB&#x7684;&#x6BD4;&#x8F83;"></a>&#x4E24;&#x5927;&#x5B58;&#x50A8;&#x5F15;&#x64CE;MyISAM&#x548C;InnoDB&#x7684;&#x6BD4;&#x8F83;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MyISAM"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#InnoDB"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL常见的存储引擎"><span class="nav-number">1.</span> <span class="nav-text"><a href="#MySQL&#x5E38;&#x89C1;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;" class="headerlink" title="MySQL&#x5E38;&#x89C1;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;"></a>MySQL&#x5E38;&#x89C1;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#两大存储引擎MyISAM和InnoDB的比较"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x4E24;&#x5927;&#x5B58;&#x50A8;&#x5F15;&#x64CE;MyISAM&#x548C;InnoDB&#x7684;&#x6BD4;&#x8F83;" class="headerlink" title="&#x4E24;&#x5927;&#x5B58;&#x50A8;&#x5F15;&#x64CE;MyISAM&#x548C;InnoDB&#x7684;&#x6BD4;&#x8F83;"></a>&#x4E24;&#x5927;&#x5B58;&#x50A8;&#x5F15;&#x64CE;MyISAM&#x548C;InnoDB&#x7684;&#x6BD4;&#x8F83;</span></a></li></ol></div>
             
 
           </div>
