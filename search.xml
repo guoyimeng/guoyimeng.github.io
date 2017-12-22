@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MySQL-04-面试题汇总]]></title>
+    <url>%2F2017%2F12%2F22%2FMySQL-04-%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB%2F</url>
+    <content type="text"><![CDATA[复习维度 数据库 基本语法 数据类型 连接类型 数据备份 存储引擎 索引 事务 SQL注入 优化 PHP相关 题目 数据库类型 以及 常见的数据库 数据库设计的三范式 SQL的核心功能 以及 DML操作的语法 char和varchar的区别 以及 哪个查询效率高 time date datetime timestamp的区别 交叉连接 内连接 外连接(左外连接、右外连接) 自然连接 全连接 备份与恢复的命令 单表 多表 库 两大存储引擎的区别 (11点) 索引是什么 产生背景 类型 区别 好处 缺点(负面影响) 创建原则 创建语法 复合索引的使用 遵循从左往右原则 事务概念 特点 产生背景 具体使用 SQL注入产生原因 具体例子 解决方案 从设计或者维护的角度 优化 从使用或者执行的角度 优化 MySQL一些系统函数 获取下一个自增长id的方法 IP如何保存 如何在MySQL中写入utf8格式数据 mysql_fetch_row() mysql_fetch_assoc() mysql_fetch_array() 面向对象 PHP实例化操作数据库的类 面向过程 实现PHP简单查询数据库 PHP访问数据库的步骤 待补充]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[服务器架构-01]]></title>
     <url>%2F2017%2F12%2F22%2F%E6%9C%8D%E5%8A%A1%E5%99%A8-01-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84%2F</url>
     <content type="text"><![CDATA[常见架构形式 LAMP LNMP LNMPA 服务器软件介绍 Apache Nginx Lighttpd IIS LNMPA架构介绍shell脚本两种形式 命令行输入的 以.sh为后缀结尾的文件 (偏重这个解释) 简单理解将以前在命令行中一行一行输入的命令写在一个文件中然后一次性执行]]></content>
@@ -15,7 +26,7 @@
   <entry>
     <title><![CDATA[MySQL两大存储引擎的区别]]></title>
     <url>%2F2017%2F12%2F22%2FMySQL-03-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
-    <content type="text"><![CDATA[MySQL常见的存储引擎 MyISAM InnoDB Memory Merge 可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive 做日志归档 … 两大存储引擎MyISAM和InnoDB的比较 MyISAM InnoDB 索引结构 非聚簇结构 索引和数据不存放在一起 聚簇结构 索引和数据存放在一起 普通索引 普通索引的数据区存放的是表数据的物理地址 使用普通索引查找数据与使用主键索引查找数据效果一样 普通索引的数据区存放的是主键信息 使用普通索引查找数据的时候 出现”二次遍历”的现象 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 两个文件 .frm存放表结构 默认情况下所有的InnoDB表的索引和数据都存放在ibdata文件中 数据备份 复制粘贴文件即可 使用命令来来备份数据表 全文检索 支持 不支持 事务 不支持 支持 外键 不支持 支持 锁机制 表锁 行锁 不支持表锁 但是当行锁加载索引列上的时候 MySQL服务器会给InnoDB表加上表锁 DQL效率 稍慢 稍快 DML效率 快 相比InnoDB 其不需要对主键ID排序 直接插入即可 稍慢 因为在插入数据的时候 会先对主键ID进行排序后再加入 select count(*) 快 MyISAM存储了记录总数 慢 需要全表扫描]]></content>
+    <content type="text"><![CDATA[MySQL常见的存储引擎 MyISAM InnoDB Memory Merge 可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive 做日志归档 Heap 可以提高一个数量级的查询效率 BlackHole … 两大存储引擎MyISAM和InnoDB的比较 MyISAM InnoDB 索引结构 非聚簇结构 索引和数据不存放在一起 聚簇结构 索引和数据存放在一起 普通索引 普通索引的数据区存放的是表数据的物理地址 使用普通或者主键索引查找数据效果一样 普通索引的数据区存放的是主键信息 使用普通索引查找数据的时候 出现”二次遍历”的现象 文件组成 三个文件 .frm存放表结构 .myi存放索引 .myd存放数据 两个文件 .frm存放表结构 默认情况下所有的InnoDB表的索引和数据都存放在ibdata文件中 数据备份 复制粘贴文件即可 使用命令来来备份数据表 全文检索 支持 不支持 事务 不支持 支持 外键 不支持 支持 锁机制 表锁 行锁 不支持表锁 但是当行锁加载索引列上的时候 MySQL服务器会给InnoDB表加上表锁 DQL效率 稍慢 稍快 DML效率 快 相比InnoDB 其不需要对主键ID排序 直接插入即可 稍慢 因为在插入数据的时候 会先对主键ID进行排序后再加入 select count(*) 快 MyISAM存储了记录总数 慢 需要全表扫描]]></content>
       <categories>
         <category>MySQL</category>
       </categories>
