@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="二萌">
 <meta property="og:description" content="MySQL常见的存储引擎 MyISAM InnoDB Memory     Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive    做日志归档 …  两大存储引擎MyISAM和InnoDB的比较    MyISAM InnoDB     索引结构 非聚簇结构 索引和数据不存放在一起 聚簇结构 索引和数据存放在一起   普通索引 普通索引的数据">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-22T04:03:30.480Z">
+<meta property="og:updated_time" content="2017-12-22T04:04:46.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL两大存储引擎的区别">
 <meta name="twitter:description" content="MySQL常见的存储引擎 MyISAM InnoDB Memory     Merge        可以将若干MyISAM存储引擎的表联合在一起 当做一张表来使用 Archive    做日志归档 …  两大存储引擎MyISAM和InnoDB的比较    MyISAM InnoDB     索引结构 非聚簇结构 索引和数据不存放在一起 聚簇结构 索引和数据存放在一起   普通索引 普通索引的数据">
@@ -444,7 +444,7 @@
 <td style="text-align:center">稍慢 因为在插入数据的时候 会先对主键ID进行排序后再加入</td>
 </tr>
 <tr>
-<td style="text-align:center">统计总数</td>
+<td style="text-align:center">select count(*)</td>
 <td style="text-align:center">快 MyISAM存储了记录总数</td>
 <td style="text-align:center">慢 需要全表扫描</td>
 </tr>
