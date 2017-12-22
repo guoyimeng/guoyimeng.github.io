@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[MySQL-04-面试题汇总]]></title>
+    <title><![CDATA[MySQL-面试题汇总]]></title>
     <url>%2F2017%2F12%2F22%2FMySQL-04-%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB%2F</url>
-    <content type="text"><![CDATA[复习维度 数据库 基本语法 数据类型 连接类型 数据备份 存储引擎 索引 事务 SQL注入 优化 PHP相关 题目 数据库类型 以及 常见的数据库 数据库设计的三范式 SQL的核心功能 以及 DML操作的语法 char和varchar的区别 以及 哪个查询效率高 time date datetime timestamp的区别 交叉连接 内连接 外连接(左外连接、右外连接) 自然连接 全连接 备份与恢复的命令 单表 多表 库 两大存储引擎的区别 (11点) 索引是什么 产生背景 类型 区别 好处 缺点(负面影响) 创建原则 创建语法 复合索引的使用 遵循从左往右原则 事务概念 特点 产生背景 具体使用 SQL注入产生原因 具体例子 解决方案 从设计或者维护的角度 优化 从使用或者执行的角度 优化 MySQL一些系统函数 获取下一个自增长id的方法 IP如何保存 如何在MySQL中写入utf8格式数据 mysql_fetch_row() mysql_fetch_assoc() mysql_fetch_array() 面向对象 PHP实例化操作数据库的类 面向过程 实现PHP简单查询数据库 PHP访问数据库的步骤 待补充]]></content>
+    <content type="text"><![CDATA[数据库123数据库类型 以及 常见的数据库数据库设计的三范式MySQL一些系统函数 基本语法1SQL的核心功能 以及 DML操作的语法 数据类型12char和varchar的区别 以及 哪个查询效率高time date datetime timestamp的区别 连接类型1交叉连接 内连接 外连接(左外连接、右外连接) 自然连接 全连接 数据备份1备份与恢复的命令 单表 多表 库 存储引擎12MySQL存储引擎有哪些两大存储引擎的区别 (11点) 索引12索引是什么 产生背景 类型 区别 好处 缺点(负面影响) 创建原则 创建语法复合索引的使用 遵循从左往右原则 事务1事务概念 特点 产生背景 具体使用 SQL注入1SQL注入产生原因 具体例子 解决方案 优化12从设计或者维护的角度 优化从使用或者执行的角度 优化 慢日志123```## 具体操作 获取下一个自增长id的方法IP如何保存如何在MySQL中写入utf8格式数据mysql_fetch_row() mysql_fetch_assoc() mysql_fetch_array()面向对象 PHP实例化操作数据库的类面向过程 实现PHP简单查询数据库PHP访问数据库的步骤``` 待补充]]></content>
       <categories>
         <category>MySQL</category>
       </categories>
@@ -36,9 +36,20 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[MySQL基础知识-03]]></title>
+    <url>%2F2017%2F12%2F19%2FMySQL-03-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[全文索引前缀索引慢日志查询 (面试)123称呼: 慢查询 || 慢日志查询 || 日志慢查询作用: 将执行比较慢的SQL语句记录在日志文件中,参照该日志,进而优化将那些执行效率低下的SQL语句慢? : 相对概念 根据不同需求,可以人为设定慢时间 1234参数:slow_query_log 是否开启慢日志功能 &#123;OFF: 0, ON: 1&#125; 默认关闭slow_query_log_file 慢日志文件所在位置 不要随意修改long_query_time 设置慢查询容忍时间 1234567891011121314#作用打开指定文件 显示头部指定行数# 语法head -n 行数 文件路径 #作用打开指定文件 显示尾部指定行数# 语法tail -n 行数 文件路径#作用在占用窗口一直打开该指定文件 有内容输入时 立即显示出来# 语法tail -f 文件路径 SQL语句缓存分区分表锁]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL基础知识-02]]></title>
     <url>%2F2017%2F12%2F19%2FMySQL-02-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
-    <content type="text"><![CDATA[1 修改数据表1.1 添加字段1alter table 表名 add 字段名 数据类型 列属性 位置; 位置: - 不写 表示插在所有字段的后面 - first 表示插在所有字段的前面 - after field 表示插在指定字段的后面 1.2 修改字段列属性 、位置1mysql&gt; alter table 表名 modify 字段名 数据类型 列属性 位置; 说明: modify 不能修改字段名字 change 可以修改字段名字 1.3 修改字段列属性、位置或字段名字1mysql&gt; alter table 表名 change 旧字段名 新字段名 数据类型 列属性 位置; 1.4 删除字段1mysql&gt; alter table 表名 drop 字段名; 1.5 修改表名12mysql&gt; alter table 旧表名 rename [to] 新表名;mysql&gt; rename 旧表名 to 新表名; 1.6 移动数据表12mysql&gt; alter table 旧表名 rename [to] 新库名.表名;mysql&gt; rename 旧表名 to 新库名.表名; 1.7 复制表结构 方式一 方式二 语法 create table 表名 select * from 旧表名; create table 表名 like 旧表名; 结果 新表和旧表的数据一样 但是主键信息丢失 新表和旧表结构一样 但是数据丢失 解决 alter table 新表名 modify 主键字段 数据类型 auto_increment primary key first; insert into 新表名 select * from 旧表名; 1.8 批量操作1234567alter table 表名 add ..., add ..., drop ..., drop ..., modify ..., modify ...; 2 MySQL存储引擎介绍2.1 存储引擎1MyISAM | InnoDB | Archive | Memory | CSV | BlackHole | ... 2.2 InnoDB 与 MyISAM 的区别 MyISAM InnoDB 备份 复制粘贴文件即可 使用命令来来备份数据表 文件 表结构.frm 索引.myi 数据.myd 表结构.frm 索引和数据在一个文件 全文检索 支持 不支持 外键 不支持 支持 事务 不支持 支持 锁 表锁 行锁 查询效率 较快 插入效率 较快 3 MySQL字符集与校对规则 一个字符集 可以有很多 校对规则 一个校对规则 只对应一个 字符集 校对规则 影响查询的结果 4 MySQL数据类型4.1 分类 类型 具体 说明 整型 tinyint 1B -128~127 0~128 smallint mediumint int 4B bigint 8B 浮点型 float(M,D) 单精度小数 4B 6位 double(M,D) 双精度小数 8B 12位 decimal(M,D) 定点小数 若M&gt;D,则占(M+2)B 精确 字符型 char 定长字符 varchar 变长字符 enum 枚举 set 集合 文本型 text longtext 时间型 date datetime timestamp 整型 tinyint 1 smallint mediumint int bigint 浮点型 float double decimal 字符型 char varchar 文本型 text 日期时间型 date datetime timestamp]]></content>
+    <content type="text"><![CDATA[1 修改数据表1.1 添加字段1alter table 表名 add 字段名 数据类型 列属性 位置; 位置: - 不写 表示插在所有字段的后面 - first 表示插在所有字段的前面 - after field 表示插在指定字段的后面 1.2 修改字段列属性 、位置1mysql&gt; alter table 表名 modify 字段名 数据类型 列属性 位置; 说明: modify 不能修改字段名字 change 可以修改字段名字 1.3 修改字段列属性、位置或字段名字1mysql&gt; alter table 表名 change 旧字段名 新字段名 数据类型 列属性 位置; 1.4 删除字段1mysql&gt; alter table 表名 drop 字段名; 1.5 修改表名12mysql&gt; alter table 旧表名 rename [to] 新表名;mysql&gt; rename 旧表名 to 新表名; 1.6 移动数据表12mysql&gt; alter table 旧表名 rename [to] 新库名.表名;mysql&gt; rename 旧表名 to 新库名.表名; 1.7 复制表结构 方式一 方式二 语法 create table 表名 select * from 旧表名; create table 表名 like 旧表名; 结果 新表和旧表的数据一样 但是主键信息丢失 新表和旧表结构一样 但是数据丢失 解决 alter table 新表名 modify 主键字段 数据类型 auto_increment primary key first; insert into 新表名 select * from 旧表名; 1.8 批量操作1234567alter table 表名 add ..., add ..., drop ..., drop ..., modify ..., modify ...; 2 MySQL存储引擎介绍2.1 存储引擎1MyISAM | InnoDB | Archive | Memory | CSV | BlackHole | ... 2.2 InnoDB 与 MyISAM 的区别 MyISAM InnoDB 备份 复制粘贴文件即可 使用命令来来备份数据表 文件 表结构.frm 索引.myi 数据.myd 表结构.frm 索引和数据在一个文件 全文检索 支持 不支持 外键 不支持 支持 事务 不支持 支持 锁 表锁 行锁 查询效率 较快 插入效率 较快 3 MySQL字符集与校对规则 一个字符集 可以有很多 校对规则 一个校对规则 只对应一个 字符集 校对规则 影响查询的结果 4 MySQL数据类型4.1 分类 类型 具体 说明 整型 tinyint 1B -128~127 0~128 smallint mediumint int 4B bigint 8B 浮点型 float(M,D) 单精度小数 4B 6位 double(M,D) 双精度小数 8B 12位 decimal(M,D) 定点小数 若M&gt;D,则占(M+2)B 精确 字符型 char 定长字符 varchar 变长字符 enum 枚举 set 集合 文本型 text longtext 时间型 time 3B 00:00 ~ 23:59 date 3B 1001-01-01 ~ 9999-12-31 datetime 8B 1001-01-01 ~ 9999-12-31 后加 00:00 ~ 23:59 timestamp 4B 1970-01-01 ~ 2038-12-31 后加 00:00 ~ 23:59]]></content>
       <categories>
         <category>MySQL</category>
       </categories>
