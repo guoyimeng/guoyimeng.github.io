@@ -1812,7 +1812,7 @@ pre .javascript .function {
   margin-right: 10px;
   margin-bottom: 10px;
   border-bottom-color: #555;
-  font-size: 13px;
+  font-size: 14px;
 }
 .links-of-author a:before {
   display: inline-block;
@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a363b4;
+  background: #2686b0;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1958,7 +1958,7 @@ pre .javascript .function {
   left: 100%;
   width: 200%;
   height: 100%;
-  background: #000;
+  background: #ffc0cb;
   opacity: 0;
   transition: opacity 0.2s, transform 0s 0.2s;
 }

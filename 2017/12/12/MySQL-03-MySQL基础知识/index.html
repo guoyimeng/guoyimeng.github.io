@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="数据库123数据库类型 以及 常见的数据库数据库设计的三范式MySQL一些系统函数 基本语法1SQL的核心功能 以及 DML操作的语法 数据类型12char和varchar的区别 以及 哪个查询效率高time date datetime timestamp的区别 连接类型1交叉连接 内连接 外连接(左外连接、右外连接) 自然连接 全连接 数据备份1备份与恢复的命令 单表 多表 库 存储引擎12My">
+<meta name="description" content="索引概念与产生背景索引类型123456主键索引唯一索引普通索引复合索引全文索引前缀索引 索引的优劣创建索引的指标主键索引唯一索引普通索引复合索引全文索引前缀索引">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL-面试题汇总">
-<meta property="og:url" content="https://github.com/guoyimeng/2017/12/22/MySQL-04-面试题汇总/index.html">
+<meta property="og:title" content="MySQL-索引详述篇">
+<meta property="og:url" content="https://github.com/guoyimeng/2017/12/12/MySQL-03-MySQL基础知识/index.html">
 <meta property="og:site_name" content="二萌">
-<meta property="og:description" content="数据库123数据库类型 以及 常见的数据库数据库设计的三范式MySQL一些系统函数 基本语法1SQL的核心功能 以及 DML操作的语法 数据类型12char和varchar的区别 以及 哪个查询效率高time date datetime timestamp的区别 连接类型1交叉连接 内连接 外连接(左外连接、右外连接) 自然连接 全连接 数据备份1备份与恢复的命令 单表 多表 库 存储引擎12My">
+<meta property="og:description" content="索引概念与产生背景索引类型123456主键索引唯一索引普通索引复合索引全文索引前缀索引 索引的优劣创建索引的指标主键索引唯一索引普通索引复合索引全文索引前缀索引">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-22T09:24:50.580Z">
+<meta property="og:updated_time" content="2017-12-24T05:54:00.891Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL-面试题汇总">
-<meta name="twitter:description" content="数据库123数据库类型 以及 常见的数据库数据库设计的三范式MySQL一些系统函数 基本语法1SQL的核心功能 以及 DML操作的语法 数据类型12char和varchar的区别 以及 哪个查询效率高time date datetime timestamp的区别 连接类型1交叉连接 内连接 外连接(左外连接、右外连接) 自然连接 全连接 数据备份1备份与恢复的命令 单表 多表 库 存储引擎12My">
+<meta name="twitter:title" content="MySQL-索引详述篇">
+<meta name="twitter:description" content="索引概念与产生背景索引类型123456主键索引唯一索引普通索引复合索引全文索引前缀索引 索引的优劣创建索引的指标主键索引唯一索引普通索引复合索引全文索引前缀索引">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/guoyimeng/2017/12/22/MySQL-04-面试题汇总/"/>
+  <link rel="canonical" href="https://github.com/guoyimeng/2017/12/12/MySQL-03-MySQL基础知识/"/>
 
 
 
 
 
-  <title>MySQL-面试题汇总 | 二萌</title>
+  <title>MySQL-索引详述篇 | 二萌</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/guoyimeng/2017/12/22/MySQL-04-面试题汇总/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/guoyimeng/2017/12/12/MySQL-03-MySQL基础知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lemon">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL-面试题汇总</h1>
+          <h1 class="post-title" itemprop="name headline">MySQL-索引详述篇</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-22T15:56:55+08:00">
-                2017-12-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-12T16:30:16+08:00">
+                2017-12-12
               </time>
             
 
@@ -376,21 +376,8 @@
       
 
       
-        <h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">数据库类型 以及 常见的数据库</span><br><span class="line">数据库设计的三范式</span><br><span class="line">MySQL一些系统函数</span><br></pre></td></tr></table></figure>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL的核心功能 以及 DML操作的语法</span><br></pre></td></tr></table></figure>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char和varchar的区别 以及 哪个查询效率高</span><br><span class="line">time date datetime timestamp的区别</span><br></pre></td></tr></table></figure>
-<h2 id="连接类型"><a href="#连接类型" class="headerlink" title="连接类型"></a>连接类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">交叉连接 内连接 外连接(左外连接、右外连接) 自然连接 全连接</span><br></pre></td></tr></table></figure>
-<h2 id="数据备份"><a href="#数据备份" class="headerlink" title="数据备份"></a>数据备份</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">备份与恢复的命令 单表 多表 库</span><br></pre></td></tr></table></figure>
-<h2 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MySQL存储引擎有哪些</span><br><span class="line">两大存储引擎的区别 (11点)</span><br></pre></td></tr></table></figure>
-<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">索引是什么 产生背景 类型 区别 好处 缺点(负面影响) 创建原则 创建语法</span><br><span class="line">复合索引的使用 遵循从左往右原则</span><br></pre></td></tr></table></figure>
-<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事务概念 特点 产生背景 具体使用</span><br></pre></td></tr></table></figure>
-<h2 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL注入产生原因 具体例子 解决方案</span><br></pre></td></tr></table></figure>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">从设计或者维护的角度 优化</span><br><span class="line">从使用或者执行的角度 优化</span><br></pre></td></tr></table></figure>
-<h2 id="慢日志"><a href="#慢日志" class="headerlink" title="慢日志"></a>慢日志</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">## 分区与分表技术</span><br></pre></td></tr></table></figure>
-<p>分区<br>key hash range list</p>
-<p>分表<br>水平 垂直<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 具体操作</span><br></pre></td></tr></table></figure></p>
-<p>获取下一个自增长id的方法<br>IP如何保存<br>如何在MySQL中写入utf8格式数据<br>mysql_fetch_row() mysql_fetch_assoc() mysql_fetch_array()<br>面向对象 PHP实例化操作数据库的类<br>面向过程 实现PHP简单查询数据库<br>PHP访问数据库的步骤<br>```</p>
-<h2 id="待补充"><a href="#待补充" class="headerlink" title="待补充"></a>待补充</h2>
+        <h1 id="索引概念与产生背景"><a href="#索引概念与产生背景" class="headerlink" title="索引概念与产生背景"></a>索引概念与产生背景</h1><h1 id="索引类型"><a href="#索引类型" class="headerlink" title="索引类型"></a>索引类型</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">主键索引</span><br><span class="line">唯一索引</span><br><span class="line">普通索引</span><br><span class="line">复合索引</span><br><span class="line">全文索引</span><br><span class="line">前缀索引</span><br></pre></td></tr></table></figure>
+<h1 id="索引的优劣"><a href="#索引的优劣" class="headerlink" title="索引的优劣"></a>索引的优劣</h1><h1 id="创建索引的指标"><a href="#创建索引的指标" class="headerlink" title="创建索引的指标"></a>创建索引的指标</h1><h1 id="主键索引"><a href="#主键索引" class="headerlink" title="主键索引"></a>主键索引</h1><h1 id="唯一索引"><a href="#唯一索引" class="headerlink" title="唯一索引"></a>唯一索引</h1><h1 id="普通索引"><a href="#普通索引" class="headerlink" title="普通索引"></a>普通索引</h1><h1 id="复合索引"><a href="#复合索引" class="headerlink" title="复合索引"></a>复合索引</h1><h1 id="全文索引"><a href="#全文索引" class="headerlink" title="全文索引"></a>全文索引</h1><h1 id="前缀索引"><a href="#前缀索引" class="headerlink" title="前缀索引"></a>前缀索引</h1>
       
     </div>
     
@@ -420,8 +407,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/22/服务器-01-服务器架构/" rel="next" title="服务器架构-01">
-                <i class="fa fa-chevron-left"></i> 服务器架构-01
+              <a href="/2017/12/11/MySQL-02-MySQL基础知识/" rel="next" title="MySQL-语法升级篇">
+                <i class="fa fa-chevron-left"></i> MySQL-语法升级篇
               </a>
             
           </div>
@@ -429,6 +416,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/13/MySQL-04-MySQL基础知识/" rel="prev" title="MySQL-慢日志与SQL缓存">
+                MySQL-慢日志与SQL缓存 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -511,7 +502,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -568,7 +559,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x6570;&#x636E;&#x5E93;"></a>&#x6570;&#x636E;&#x5E93;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本语法"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x57FA;&#x672C;&#x8BED;&#x6CD5;" class="headerlink" title="&#x57FA;&#x672C;&#x8BED;&#x6CD5;"></a>&#x57FA;&#x672C;&#x8BED;&#x6CD5;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x6570;&#x636E;&#x7C7B;&#x578B;" class="headerlink" title="&#x6570;&#x636E;&#x7C7B;&#x578B;"></a>&#x6570;&#x636E;&#x7C7B;&#x578B;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接类型"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x8FDE;&#x63A5;&#x7C7B;&#x578B;" class="headerlink" title="&#x8FDE;&#x63A5;&#x7C7B;&#x578B;"></a>&#x8FDE;&#x63A5;&#x7C7B;&#x578B;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据备份"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x6570;&#x636E;&#x5907;&#x4EFD;" class="headerlink" title="&#x6570;&#x636E;&#x5907;&#x4EFD;"></a>&#x6570;&#x636E;&#x5907;&#x4EFD;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储引擎"><span class="nav-number">6.</span> <span class="nav-text"><a href="#&#x5B58;&#x50A8;&#x5F15;&#x64CE;" class="headerlink" title="&#x5B58;&#x50A8;&#x5F15;&#x64CE;"></a>&#x5B58;&#x50A8;&#x5F15;&#x64CE;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引"><span class="nav-number">7.</span> <span class="nav-text"><a href="#&#x7D22;&#x5F15;" class="headerlink" title="&#x7D22;&#x5F15;"></a>&#x7D22;&#x5F15;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务"><span class="nav-number">8.</span> <span class="nav-text"><a href="#&#x4E8B;&#x52A1;" class="headerlink" title="&#x4E8B;&#x52A1;"></a>&#x4E8B;&#x52A1;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL注入"><span class="nav-number">9.</span> <span class="nav-text"><a href="#SQL&#x6CE8;&#x5165;" class="headerlink" title="SQL&#x6CE8;&#x5165;"></a>SQL&#x6CE8;&#x5165;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化"><span class="nav-number">10.</span> <span class="nav-text"><a href="#&#x4F18;&#x5316;" class="headerlink" title="&#x4F18;&#x5316;"></a>&#x4F18;&#x5316;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#慢日志"><span class="nav-number">11.</span> <span class="nav-text"><a href="#&#x6162;&#x65E5;&#x5FD7;" class="headerlink" title="&#x6162;&#x65E5;&#x5FD7;"></a>&#x6162;&#x65E5;&#x5FD7;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#待补充"><span class="nav-number">12.</span> <span class="nav-text"><a href="#&#x5F85;&#x8865;&#x5145;" class="headerlink" title="&#x5F85;&#x8865;&#x5145;"></a>&#x5F85;&#x8865;&#x5145;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#索引概念与产生背景"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x7D22;&#x5F15;&#x6982;&#x5FF5;&#x4E0E;&#x4EA7;&#x751F;&#x80CC;&#x666F;" class="headerlink" title="&#x7D22;&#x5F15;&#x6982;&#x5FF5;&#x4E0E;&#x4EA7;&#x751F;&#x80CC;&#x666F;"></a>&#x7D22;&#x5F15;&#x6982;&#x5FF5;&#x4E0E;&#x4EA7;&#x751F;&#x80CC;&#x666F;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引类型"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x7D22;&#x5F15;&#x7C7B;&#x578B;" class="headerlink" title="&#x7D22;&#x5F15;&#x7C7B;&#x578B;"></a>&#x7D22;&#x5F15;&#x7C7B;&#x578B;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引的优劣"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x7D22;&#x5F15;&#x7684;&#x4F18;&#x52A3;" class="headerlink" title="&#x7D22;&#x5F15;&#x7684;&#x4F18;&#x52A3;"></a>&#x7D22;&#x5F15;&#x7684;&#x4F18;&#x52A3;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建索引的指标"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x7684;&#x6307;&#x6807;" class="headerlink" title="&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x7684;&#x6307;&#x6807;"></a>&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x7684;&#x6307;&#x6807;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主键索引"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x4E3B;&#x952E;&#x7D22;&#x5F15;" class="headerlink" title="&#x4E3B;&#x952E;&#x7D22;&#x5F15;"></a>&#x4E3B;&#x952E;&#x7D22;&#x5F15;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#唯一索引"><span class="nav-number">6.</span> <span class="nav-text"><a href="#&#x552F;&#x4E00;&#x7D22;&#x5F15;" class="headerlink" title="&#x552F;&#x4E00;&#x7D22;&#x5F15;"></a>&#x552F;&#x4E00;&#x7D22;&#x5F15;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#普通索引"><span class="nav-number">7.</span> <span class="nav-text"><a href="#&#x666E;&#x901A;&#x7D22;&#x5F15;" class="headerlink" title="&#x666E;&#x901A;&#x7D22;&#x5F15;"></a>&#x666E;&#x901A;&#x7D22;&#x5F15;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复合索引"><span class="nav-number">8.</span> <span class="nav-text"><a href="#&#x590D;&#x5408;&#x7D22;&#x5F15;" class="headerlink" title="&#x590D;&#x5408;&#x7D22;&#x5F15;"></a>&#x590D;&#x5408;&#x7D22;&#x5F15;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全文索引"><span class="nav-number">9.</span> <span class="nav-text"><a href="#&#x5168;&#x6587;&#x7D22;&#x5F15;" class="headerlink" title="&#x5168;&#x6587;&#x7D22;&#x5F15;"></a>&#x5168;&#x6587;&#x7D22;&#x5F15;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前缀索引"><span class="nav-number">10.</span> <span class="nav-text"><a href="#&#x524D;&#x7F00;&#x7D22;&#x5F15;" class="headerlink" title="&#x524D;&#x7F00;&#x7D22;&#x5F15;"></a>&#x524D;&#x7F00;&#x7D22;&#x5F15;</span></a></li></ol></div>
             
 
           </div>

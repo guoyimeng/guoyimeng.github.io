@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[MySQL-面试题汇总]]></title>
-      <url>/2017/12/22/MySQL-04-%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/</url>
+      <url>/2017/12/22/MySQL-11-%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/</url>
       <content type="html"><![CDATA[<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">数据库类型 以及 常见的数据库</span><br><span class="line">数据库设计的三范式</span><br><span class="line">MySQL一些系统函数</span><br></pre></td></tr></table></figure>
 <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL的核心功能 以及 DML操作的语法</span><br></pre></td></tr></table></figure>
 <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char和varchar的区别 以及 哪个查询效率高</span><br><span class="line">time date datetime timestamp的区别</span><br></pre></td></tr></table></figure>
@@ -76,7 +76,7 @@
     
     <entry>
       <title><![CDATA[MySQL两大存储引擎的区别]]></title>
-      <url>/2017/12/22/MySQL-03-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <url>/2017/12/22/MySQL-12-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
       <content type="html"><![CDATA[<h1 id="MySQL常见的存储引擎"><a href="#MySQL常见的存储引擎" class="headerlink" title="MySQL常见的存储引擎"></a>MySQL常见的存储引擎</h1><ul>
 <li>MyISAM</li>
 <li>InnoDB</li>
@@ -173,12 +173,142 @@
     </entry>
     
     <entry>
-      <title><![CDATA[MySQL基础知识-03]]></title>
-      <url>/2017/12/19/MySQL-03-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
-      <content type="html"><![CDATA[<h1 id="全文索引"><a href="#全文索引" class="headerlink" title="全文索引"></a>全文索引</h1><h1 id="前缀索引"><a href="#前缀索引" class="headerlink" title="前缀索引"></a>前缀索引</h1><h1 id="慢日志查询-面试"><a href="#慢日志查询-面试" class="headerlink" title="慢日志查询  (面试)"></a>慢日志查询  (面试)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">称呼: 慢查询 || 慢日志查询 || 日志慢查询</span><br><span class="line">作用: 将执行比较慢的SQL语句记录在日志文件中,参照该日志,进而优化将那些执行效率低下的SQL语句</span><br><span class="line">慢? : 相对概念 根据不同需求,可以人为设定慢时间</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">参数:</span><br><span class="line">slow_query_log	是否开启慢日志功能 &#123;OFF: 0, ON: 1&#125; 默认关闭</span><br><span class="line">slow_query_log_file	慢日志文件所在位置 不要随意修改</span><br><span class="line">long_query_time	设置慢查询容忍时间</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#作用</span><br><span class="line">打开指定文件 显示头部指定行数</span><br><span class="line"># 语法</span><br><span class="line">head -n 行数 文件路径 </span><br><span class="line"></span><br><span class="line">#作用</span><br><span class="line">打开指定文件 显示尾部指定行数</span><br><span class="line"># 语法</span><br><span class="line">tail -n 行数 文件路径</span><br><span class="line"></span><br><span class="line">#作用</span><br><span class="line">在占用窗口一直打开该指定文件 有内容输入时 立即显示出来</span><br><span class="line"># 语法</span><br><span class="line">tail -f 文件路径</span><br></pre></td></tr></table></figure>
-<h1 id="SQL语句缓存"><a href="#SQL语句缓存" class="headerlink" title="SQL语句缓存"></a>SQL语句缓存</h1><h1 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h1><h2 id="key"><a href="#key" class="headerlink" title="key"></a>key</h2><h2 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h2><h2 id="range"><a href="#range" class="headerlink" title="range"></a>range</h2><h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><h1 id="分表-面试"><a href="#分表-面试" class="headerlink" title="分表 (面试)"></a>分表 (面试)</h1><h2 id="水平"><a href="#水平" class="headerlink" title="水平"></a>水平</h2><h2 id="垂直"><a href="#垂直" class="headerlink" title="垂直"></a>垂直</h2><h1 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h1>]]></content>
+      <title><![CDATA[ThinkPHP3.2-模型篇]]></title>
+      <url>/2017/12/18/ThinkPHP-03-ThinkPHP%E6%A8%A1%E5%9E%8B/</url>
+      <content type="html"><![CDATA[<h1 id="CURD操作"><a href="#CURD操作" class="headerlink" title="CURD操作"></a>CURD操作</h1><h2 id="添加-add"><a href="#添加-add" class="headerlink" title="添加 add"></a>添加 add</h2><ul>
+<li>格式: $model -&gt; add($data);</li>
+</ul>
+<h2 id="修改-save"><a href="#修改-save" class="headerlink" title="修改 save"></a>修改 save</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">格式: $model -&gt; save($data);</span><br><span class="line">参数: 一维关联数组 含有要修改记录的主键id</span><br><span class="line">返回: 0 || 1</span><br></pre></td></tr></table></figure>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- find()</span><br><span class="line">- find(主键id)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回 一维数组或者NULL</li>
+</ul>
+<h3 id="select"><a href="#select" class="headerlink" title="select"></a>select</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-&gt; select()</span><br><span class="line">-&gt; select(&apos;主键1, 主键2, 主键3, ..., 主键n&apos;)</span><br><span class="line">-&gt; select(主键id)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回 二维数组或者Array(0){}</li>
+</ul>
+<h3 id="find与select"><a href="#find与select" class="headerlink" title="find与select"></a>find与select</h3><ul>
+<li>如果明知道查询结果只有一条 那么使用find更优</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> ThinkPHP </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ThinkPHP3.2 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[2017年北京开发者年会]]></title>
+      <url>/2017/12/18/%E5%AD%A6%E4%B9%A0-01-2017%E5%B9%B4%E5%8C%97%E4%BA%ACPHP%E5%BC%80%E5%8F%91%E8%80%85%E5%B9%B4%E4%BC%9A/</url>
+      <content type="html"><![CDATA[<h1 id="韩天峰-PHP与Swoole未来"><a href="#韩天峰-PHP与Swoole未来" class="headerlink" title="韩天峰 - PHP与Swoole未来"></a>韩天峰 - <code>PHP与Swoole未来</code></h1><h2 id="开源项目-Swoole"><a href="#开源项目-Swoole" class="headerlink" title="开源项目 Swoole"></a>开源项目 Swoole</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">2012年开始 至今历时5年</span><br><span class="line">民主化 RFC</span><br><span class="line">Swoole2内置协程 既快又简单 目标：让该项目真正应用到生成中</span><br><span class="line"></span><br><span class="line">PHP JIT (PHP8.0) 将PHP代码直接转化成机器指令</span><br><span class="line">PHP+X： 连接C++与PHP</span><br><span class="line">PHP本身是没办法做绘制图形、音频、视频等这些事情的 都是靠写扩展库</span><br><span class="line">PHP-Sciter: PHP写GUI程序</span><br><span class="line">PHPExcel：是目前来说使用量最大的操作Excel的库 但这是PHP写的 无法适用于大量的文件</span><br><span class="line">PHP-Libreoffice：photo操作Word、Excel、PDF  目标：PHP直接调用C来实现</span><br></pre></td></tr></table></figure>
+<h2 id="商业项目"><a href="#商业项目" class="headerlink" title="商业项目"></a>商业项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Swoole Compiler  源代码保护、数据加密、授权、基于AST进行漏洞扫描</span><br><span class="line">Swoole Plus</span><br><span class="line">Swoole lot System</span><br></pre></td></tr></table></figure>
+<h1 id="NeekeGao-大话性能"><a href="#NeekeGao-大话性能" class="headerlink" title="NeekeGao - 大话性能"></a>NeekeGao - <code>大话性能</code></h1><h2 id="SeasLog-JSONNet-Druid-PHP-作者"><a href="#SeasLog-JSONNet-Druid-PHP-作者" class="headerlink" title="SeasLog JSONNet Druid-PHP (作者)"></a>SeasLog JSONNet Druid-PHP (作者)</h2><h2 id="Druid-PHP-适用于大数据方向-大数据组件"><a href="#Druid-PHP-适用于大数据方向-大数据组件" class="headerlink" title="Druid-PHP 适用于大数据方向  大数据组件"></a>Druid-PHP 适用于大数据方向  大数据组件</h2><h2 id="SoLoMo-社交化-本地化-1971-John-Doerr"><a href="#SoLoMo-社交化-本地化-1971-John-Doerr" class="headerlink" title="SoLoMo 社交化 本地化 (1971 John Doerr)"></a>SoLoMo 社交化 本地化 (1971 John Doerr)</h2><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">西直门立交桥 </span><br><span class="line">- 通过队列和阻塞 提交交通效率 降低事故发生率</span><br><span class="line">- 没有红绿灯 不需要交警</span><br><span class="line">将生活关联到我们的开发 工作</span><br></pre></td></tr></table></figure>
+<h2 id="PHP应用模型"><a href="#PHP应用模型" class="headerlink" title="PHP应用模型"></a>PHP应用模型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 应用层 (DB Cache API Log)</span><br><span class="line">- 连接池 批量操作 DB索引 cache分区 读写分离 </span><br><span class="line">- 将日志缓存起来 合并IO 复用连接 并行操作 更快的序列化</span><br><span class="line">-	物理层 (IO Memory CPU Network)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">看鸟哥的PHP大会分享</span><br><span class="line">FasterCGI</span><br></pre></td></tr></table></figure>
+<h2 id="问题思考"><a href="#问题思考" class="headerlink" title="问题思考"></a>问题思考</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CDN ?</span><br><span class="line">Retry ? 代理 与 负载 ?</span><br><span class="line">SQL or NoSQL ?</span><br><span class="line">Cache ?</span><br><span class="line">SOA ? (微服务)</span><br></pre></td></tr></table></figure>
+<h2 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">避免递归、多层循环、频繁IO</span><br><span class="line">善用缓存</span><br><span class="line">慎用锁</span><br><span class="line">恰当的 小力度的使用事务</span><br><span class="line">选择适当的通信方式</span><br><span class="line">合理的使用并行计算</span><br><span class="line">合理的进行异步处理</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>立足于业务、实现于架构、DBA、测试者、运维、统筹管理者的角度</p>
+<h1 id="梅岭"><a href="#梅岭" class="headerlink" title="梅岭"></a>梅岭</h1><h1 id="周-天地汇-互联网-物流"><a href="#周-天地汇-互联网-物流" class="headerlink" title="周 天地汇 互联网+物流"></a>周 <code>天地汇</code> <code>互联网+物流</code></h1>]]></content>
+      
+        <categories>
+            
+            <category> 学习 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> PHP </tag>
+            
+            <tag> 峰会 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[PHP变量与常量-01]]></title>
+      <url>/2017/12/16/%E5%B0%8F%E7%A8%8B%E5%BA%8F-01-%E6%B3%A8%E5%86%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+      <content type="html"><![CDATA[<h1 id="账号"><a href="#账号" class="headerlink" title="账号"></a>账号</h1><ul>
+<li>AppID wx17e695da1d3437ea</li>
+<li>AppSecret 2c1be97ce2b938d177626f4d49033679</li>
+<li>邮箱 </li>
+<li>密码 常用</li>
+</ul>
+<h1 id="小程序文件类型"><a href="#小程序文件类型" class="headerlink" title="小程序文件类型"></a>小程序文件类型</h1><ul>
+<li>project.config.json 项目配置文件</li>
+<li>app.js   [必需] 没有会报错</li>
+<li>app.json 总的配置文件</li>
+<li>app.wxss 总的样式文件</li>
+<li>每个页面对应4个文件 放在一个文件夹中<ul>
+<li>*.wxml 当前页面的页面文件</li>
+<li>*.wxss 当前页面的样式文件 只对当前页面有效</li>
+<li>*.js   当前页面的js文件 只对当前页面有效</li>
+<li>*.json 当前页面的配置文件</li>
+</ul>
+</li>
+</ul>
+<h1 id="Bug"><a href="#Bug" class="headerlink" title="Bug"></a>Bug</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[微信开发工具 版本更新的错误解决]</span><br><span class="line">答:</span><br><span class="line">	在console中输入命令 openVendor()</span><br><span class="line">	弹出一个文件夹</span><br><span class="line">	删除名字为wcsc.exe文件</span><br><span class="line">	这个文件是旧版本的小程序可执行文件</span><br><span class="line">	然后再重新打开微信开发者工具</span><br></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> PHP </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> PHP </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[PHP变量与常量-01]]></title>
+      <url>/2017/12/16/PHP-01-PHP%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/</url>
+      <content type="html"><![CDATA[<h1 id="语言基础"><a href="#语言基础" class="headerlink" title="语言基础"></a>语言基础</h1><h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><p>(HyperText PreProcessor | 超文本预处理器) </p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><pre><code>运行在服务器上
+可以嵌入HTML
+开源
+免费
+跨平台
+</code></pre><h2 id="扩展名-php"><a href="#扩展名-php" class="headerlink" title="扩展名 .php"></a>扩展名 .php</h2><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><pre><code>井号       单行注释 shell风格
+//            单行注释 C风格
+/**/        多行注释 C风格
+</code></pre><h2 id="变量名区分大小写-关键字和函数名不区分大小写"><a href="#变量名区分大小写-关键字和函数名不区分大小写" class="headerlink" title="变量名区分大小写  关键字和函数名不区分大小写"></a>变量名区分大小写  关键字和函数名不区分大小写</h2><h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1>]]></content>
+      
+        <categories>
+            
+            <category> PHP </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> PHP </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MySQL-分区与分表]]></title>
+      <url>/2017/12/15/MySQL-06-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+      <content type="html"><![CDATA[<h1 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h1>]]></content>
       
         <categories>
             
@@ -196,8 +326,72 @@
     </entry>
     
     <entry>
-      <title><![CDATA[MySQL基础知识-02]]></title>
-      <url>/2017/12/19/MySQL-02-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+      <title><![CDATA[MySQL-分区与分表]]></title>
+      <url>/2017/12/14/MySQL-05-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+      <content type="html"><![CDATA[<h1 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h1><h2 id="key"><a href="#key" class="headerlink" title="key"></a>key</h2><h2 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h2><h2 id="range"><a href="#range" class="headerlink" title="range"></a>range</h2><h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><h1 id="分表-面试"><a href="#分表-面试" class="headerlink" title="分表 (面试)"></a>分表 (面试)</h1><h2 id="水平"><a href="#水平" class="headerlink" title="水平"></a>水平</h2><h2 id="垂直"><a href="#垂直" class="headerlink" title="垂直"></a>垂直</h2>]]></content>
+      
+        <categories>
+            
+            <category> MySQL </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MySQL-慢日志与SQL缓存]]></title>
+      <url>/2017/12/13/MySQL-04-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+      <content type="html"><![CDATA[<h1 id="慢日志查询-面试"><a href="#慢日志查询-面试" class="headerlink" title="慢日志查询  (面试)"></a>慢日志查询  (面试)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">称呼: 慢查询 || 慢日志查询 || 日志慢查询</span><br><span class="line">作用: 将执行比较慢的SQL语句记录在日志文件中,参照该日志,进而优化将那些执行效率低下的SQL语句</span><br><span class="line">慢? : 相对概念 根据不同需求,可以人为设定慢时间</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">参数:</span><br><span class="line">slow_query_log	是否开启慢日志功能 &#123;OFF: 0, ON: 1&#125; 默认关闭</span><br><span class="line">slow_query_log_file	慢日志文件所在位置 不要随意修改</span><br><span class="line">long_query_time	设置慢查询容忍时间</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#作用</span><br><span class="line">打开指定文件 显示头部指定行数</span><br><span class="line"># 语法</span><br><span class="line">head -n 行数 文件路径 </span><br><span class="line"></span><br><span class="line">#作用</span><br><span class="line">打开指定文件 显示尾部指定行数</span><br><span class="line"># 语法</span><br><span class="line">tail -n 行数 文件路径</span><br><span class="line"></span><br><span class="line">#作用</span><br><span class="line">在占用窗口一直打开该指定文件 有内容输入时 立即显示出来</span><br><span class="line"># 语法</span><br><span class="line">tail -f 文件路径</span><br></pre></td></tr></table></figure>
+<h1 id="SQL语句缓存"><a href="#SQL语句缓存" class="headerlink" title="SQL语句缓存"></a>SQL语句缓存</h1>]]></content>
+      
+        <categories>
+            
+            <category> MySQL </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MySQL-索引详述篇]]></title>
+      <url>/2017/12/12/MySQL-03-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+      <content type="html"><![CDATA[<h1 id="索引概念与产生背景"><a href="#索引概念与产生背景" class="headerlink" title="索引概念与产生背景"></a>索引概念与产生背景</h1><h1 id="索引类型"><a href="#索引类型" class="headerlink" title="索引类型"></a>索引类型</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">主键索引</span><br><span class="line">唯一索引</span><br><span class="line">普通索引</span><br><span class="line">复合索引</span><br><span class="line">全文索引</span><br><span class="line">前缀索引</span><br></pre></td></tr></table></figure>
+<h1 id="索引的优劣"><a href="#索引的优劣" class="headerlink" title="索引的优劣"></a>索引的优劣</h1><h1 id="创建索引的指标"><a href="#创建索引的指标" class="headerlink" title="创建索引的指标"></a>创建索引的指标</h1><h1 id="主键索引"><a href="#主键索引" class="headerlink" title="主键索引"></a>主键索引</h1><h1 id="唯一索引"><a href="#唯一索引" class="headerlink" title="唯一索引"></a>唯一索引</h1><h1 id="普通索引"><a href="#普通索引" class="headerlink" title="普通索引"></a>普通索引</h1><h1 id="复合索引"><a href="#复合索引" class="headerlink" title="复合索引"></a>复合索引</h1><h1 id="全文索引"><a href="#全文索引" class="headerlink" title="全文索引"></a>全文索引</h1><h1 id="前缀索引"><a href="#前缀索引" class="headerlink" title="前缀索引"></a>前缀索引</h1>]]></content>
+      
+        <categories>
+            
+            <category> MySQL </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MySQL-语法升级篇]]></title>
+      <url>/2017/12/11/MySQL-02-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
       <content type="html"><![CDATA[<h1 id="1-修改数据表"><a href="#1-修改数据表" class="headerlink" title="1 修改数据表"></a>1 修改数据表</h1><h2 id="1-1-添加字段"><a href="#1-1-添加字段" class="headerlink" title="1.1 添加字段"></a>1.1 添加字段</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add 字段名 数据类型 列属性 位置;</span><br></pre></td></tr></table></figure>
 <p>位置:</p>
 <pre><code>- 不写                    表示插在所有字段的后面
@@ -282,12 +476,16 @@
 </tr>
 <tr>
 <td style="text-align:center">查询效率</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">较慢</td>
 <td style="text-align:center">较快</td>
 </tr>
 <tr>
 <td style="text-align:center">插入效率</td>
 <td style="text-align:center">较快</td>
+<td style="text-align:center">较慢</td>
+</tr>
+<tr>
+<td style="text-align:center">详细参考[存储引擎篇]</td>
 </tr>
 </tbody>
 </table>
@@ -415,8 +613,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[MySQL基础知识-01]]></title>
-      <url>/2017/12/19/MySQL-01-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+      <title><![CDATA[MySQL-基础概念篇]]></title>
+      <url>/2017/12/10/MySQL-01-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
       <content type="html"><![CDATA[<h1 id="1-数据库基本概念"><a href="#1-数据库基本概念" class="headerlink" title="1 数据库基本概念"></a>1 数据库基本概念</h1><h2 id="1-1-常见数据库"><a href="#1-1-常见数据库" class="headerlink" title="1.1 常见数据库"></a>1.1 常见数据库</h2><ul>
 <li>SQL: MySQL | SQL Serevr | Oracle | DB2 | Sybase | Access | …</li>
 <li>NoSQL: MongoDB </li>
@@ -449,139 +647,6 @@
         <tags>
             
             <tag> MySQL </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[ThinkPHP3.2-模型篇]]></title>
-      <url>/2017/12/18/ThinkPHP-03-ThinkPHP%E6%A8%A1%E5%9E%8B/</url>
-      <content type="html"><![CDATA[<h1 id="CURD操作"><a href="#CURD操作" class="headerlink" title="CURD操作"></a>CURD操作</h1><h2 id="添加-add"><a href="#添加-add" class="headerlink" title="添加 add"></a>添加 add</h2><ul>
-<li>格式: $model -&gt; add($data);</li>
-</ul>
-<h2 id="修改-save"><a href="#修改-save" class="headerlink" title="修改 save"></a>修改 save</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">格式: $model -&gt; save($data);</span><br><span class="line">参数: 一维关联数组 含有要修改记录的主键id</span><br><span class="line">返回: 0 || 1</span><br></pre></td></tr></table></figure>
-<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- find()</span><br><span class="line">- find(主键id)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>返回 一维数组或者NULL</li>
-</ul>
-<h3 id="select"><a href="#select" class="headerlink" title="select"></a>select</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-&gt; select()</span><br><span class="line">-&gt; select(&apos;主键1, 主键2, 主键3, ..., 主键n&apos;)</span><br><span class="line">-&gt; select(主键id)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>返回 二维数组或者Array(0){}</li>
-</ul>
-<h3 id="find与select"><a href="#find与select" class="headerlink" title="find与select"></a>find与select</h3><ul>
-<li>如果明知道查询结果只有一条 那么使用find更优</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> ThinkPHP </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> ThinkPHP3.2 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[2017年北京开发者年会]]></title>
-      <url>/2017/12/18/%E5%AD%A6%E4%B9%A0-01-2017%E5%B9%B4%E5%8C%97%E4%BA%ACPHP%E5%BC%80%E5%8F%91%E8%80%85%E5%B9%B4%E4%BC%9A/</url>
-      <content type="html"><![CDATA[<h1 id="韩天峰-PHP与Swoole未来"><a href="#韩天峰-PHP与Swoole未来" class="headerlink" title="韩天峰 - PHP与Swoole未来"></a>韩天峰 - <code>PHP与Swoole未来</code></h1><h2 id="开源项目-Swoole"><a href="#开源项目-Swoole" class="headerlink" title="开源项目 Swoole"></a>开源项目 Swoole</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">2012年开始 至今历时5年</span><br><span class="line">民主化 RFC</span><br><span class="line">Swoole2内置协程 既快又简单 目标：让该项目真正应用到生成中</span><br><span class="line"></span><br><span class="line">PHP JIT (PHP8.0) 将PHP代码直接转化成机器指令</span><br><span class="line">PHP+X： 连接C++与PHP</span><br><span class="line">PHP本身是没办法做绘制图形、音频、视频等这些事情的 都是靠写扩展库</span><br><span class="line">PHP-Sciter: PHP写GUI程序</span><br><span class="line">PHPExcel：是目前来说使用量最大的操作Excel的库 但这是PHP写的 无法适用于大量的文件</span><br><span class="line">PHP-Libreoffice：photo操作Word、Excel、PDF  目标：PHP直接调用C来实现</span><br></pre></td></tr></table></figure>
-<h2 id="商业项目"><a href="#商业项目" class="headerlink" title="商业项目"></a>商业项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Swoole Compiler  源代码保护、数据加密、授权、基于AST进行漏洞扫描</span><br><span class="line">Swoole Plus</span><br><span class="line">Swoole lot System</span><br></pre></td></tr></table></figure>
-<h1 id="NeekeGao-大话性能"><a href="#NeekeGao-大话性能" class="headerlink" title="NeekeGao - 大话性能"></a>NeekeGao - <code>大话性能</code></h1><h2 id="SeasLog-JSONNet-Druid-PHP-作者"><a href="#SeasLog-JSONNet-Druid-PHP-作者" class="headerlink" title="SeasLog JSONNet Druid-PHP (作者)"></a>SeasLog JSONNet Druid-PHP (作者)</h2><h2 id="Druid-PHP-适用于大数据方向-大数据组件"><a href="#Druid-PHP-适用于大数据方向-大数据组件" class="headerlink" title="Druid-PHP 适用于大数据方向  大数据组件"></a>Druid-PHP 适用于大数据方向  大数据组件</h2><h2 id="SoLoMo-社交化-本地化-1971-John-Doerr"><a href="#SoLoMo-社交化-本地化-1971-John-Doerr" class="headerlink" title="SoLoMo 社交化 本地化 (1971 John Doerr)"></a>SoLoMo 社交化 本地化 (1971 John Doerr)</h2><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">西直门立交桥 </span><br><span class="line">- 通过队列和阻塞 提交交通效率 降低事故发生率</span><br><span class="line">- 没有红绿灯 不需要交警</span><br><span class="line">将生活关联到我们的开发 工作</span><br></pre></td></tr></table></figure>
-<h2 id="PHP应用模型"><a href="#PHP应用模型" class="headerlink" title="PHP应用模型"></a>PHP应用模型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 应用层 (DB Cache API Log)</span><br><span class="line">- 连接池 批量操作 DB索引 cache分区 读写分离 </span><br><span class="line">- 将日志缓存起来 合并IO 复用连接 并行操作 更快的序列化</span><br><span class="line">-	物理层 (IO Memory CPU Network)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">看鸟哥的PHP大会分享</span><br><span class="line">FasterCGI</span><br></pre></td></tr></table></figure>
-<h2 id="问题思考"><a href="#问题思考" class="headerlink" title="问题思考"></a>问题思考</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CDN ?</span><br><span class="line">Retry ? 代理 与 负载 ?</span><br><span class="line">SQL or NoSQL ?</span><br><span class="line">Cache ?</span><br><span class="line">SOA ? (微服务)</span><br></pre></td></tr></table></figure>
-<h2 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">避免递归、多层循环、频繁IO</span><br><span class="line">善用缓存</span><br><span class="line">慎用锁</span><br><span class="line">恰当的 小力度的使用事务</span><br><span class="line">选择适当的通信方式</span><br><span class="line">合理的使用并行计算</span><br><span class="line">合理的进行异步处理</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>立足于业务、实现于架构、DBA、测试者、运维、统筹管理者的角度</p>
-<h1 id="梅岭"><a href="#梅岭" class="headerlink" title="梅岭"></a>梅岭</h1><h1 id="周-天地汇-互联网-物流"><a href="#周-天地汇-互联网-物流" class="headerlink" title="周 天地汇 互联网+物流"></a>周 <code>天地汇</code> <code>互联网+物流</code></h1>]]></content>
-      
-        <categories>
-            
-            <category> 学习 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> PHP </tag>
-            
-            <tag> 峰会 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[PHP变量与常量-01]]></title>
-      <url>/2017/12/16/PHP-01-PHP%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F/</url>
-      <content type="html"><![CDATA[<h1 id="语言基础"><a href="#语言基础" class="headerlink" title="语言基础"></a>语言基础</h1><h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><p>(HyperText PreProcessor | 超文本预处理器) </p>
-<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><pre><code>运行在服务器上
-可以嵌入HTML
-开源
-免费
-跨平台
-</code></pre><h2 id="扩展名-php"><a href="#扩展名-php" class="headerlink" title="扩展名 .php"></a>扩展名 .php</h2><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><pre><code>井号       单行注释 shell风格
-//            单行注释 C风格
-/**/        多行注释 C风格
-</code></pre><h2 id="变量名区分大小写-关键字和函数名不区分大小写"><a href="#变量名区分大小写-关键字和函数名不区分大小写" class="headerlink" title="变量名区分大小写  关键字和函数名不区分大小写"></a>变量名区分大小写  关键字和函数名不区分大小写</h2><h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1>]]></content>
-      
-        <categories>
-            
-            <category> PHP </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> PHP </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[PHP变量与常量-01]]></title>
-      <url>/2017/12/16/%E5%B0%8F%E7%A8%8B%E5%BA%8F-01-%E6%B3%A8%E5%86%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
-      <content type="html"><![CDATA[<h1 id="账号"><a href="#账号" class="headerlink" title="账号"></a>账号</h1><ul>
-<li>AppID wx17e695da1d3437ea</li>
-<li>AppSecret 2c1be97ce2b938d177626f4d49033679</li>
-<li>邮箱 </li>
-<li>密码 常用</li>
-</ul>
-<h1 id="小程序文件类型"><a href="#小程序文件类型" class="headerlink" title="小程序文件类型"></a>小程序文件类型</h1><ul>
-<li>project.config.json 项目配置文件</li>
-<li>app.js   [必需] 没有会报错</li>
-<li>app.json 总的配置文件</li>
-<li>app.wxss 总的样式文件</li>
-<li>每个页面对应4个文件 放在一个文件夹中<ul>
-<li>*.wxml 当前页面的页面文件</li>
-<li>*.wxss 当前页面的样式文件 只对当前页面有效</li>
-<li>*.js   当前页面的js文件 只对当前页面有效</li>
-<li>*.json 当前页面的配置文件</li>
-</ul>
-</li>
-</ul>
-<h1 id="Bug"><a href="#Bug" class="headerlink" title="Bug"></a>Bug</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[微信开发工具 版本更新的错误解决]</span><br><span class="line">答:</span><br><span class="line">	在console中输入命令 openVendor()</span><br><span class="line">	弹出一个文件夹</span><br><span class="line">	删除名字为wcsc.exe文件</span><br><span class="line">	这个文件是旧版本的小程序可执行文件</span><br><span class="line">	然后再重新打开微信开发者工具</span><br></pre></td></tr></table></figure>]]></content>
-      
-        <categories>
-            
-            <category> PHP </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> PHP </tag>
             
         </tags>
         
