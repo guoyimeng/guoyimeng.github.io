@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="锁分类 操作读锁(共享锁)写锁(排它锁、独占锁)  范围行锁表锁  时间悲观锁乐观锁">
+<meta name="description" content="概念MySQL中不同的存储引擎支持不同的锁机制。  MyIsam和Memory: 表级锁 BDBL: 页面锁 表级锁 InnoDB: 行级锁 MySQL服务器会给其加上表级锁  特性 表级锁：开销小，加锁块；不会出现死锁，锁定粒度大，发生锁冲突的概率最高，并发度最低。  行级锁：开销大，加锁慢；会出现死锁；锁定粒度最小，发生锁冲突的概率最低，并发性也最高。  页面锁：开销和加锁界于表锁和行锁之间，">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL-锁">
 <meta property="og:url" content="https://github.com/guoyimeng/2017/12/15/MySQL-06-MySQL基础知识/index.html">
 <meta property="og:site_name" content="二萌">
-<meta property="og:description" content="锁分类 操作读锁(共享锁)写锁(排它锁、独占锁)  范围行锁表锁  时间悲观锁乐观锁">
+<meta property="og:description" content="概念MySQL中不同的存储引擎支持不同的锁机制。  MyIsam和Memory: 表级锁 BDBL: 页面锁 表级锁 InnoDB: 行级锁 MySQL服务器会给其加上表级锁  特性 表级锁：开销小，加锁块；不会出现死锁，锁定粒度大，发生锁冲突的概率最高，并发度最低。  行级锁：开销大，加锁慢；会出现死锁；锁定粒度最小，发生锁冲突的概率最低，并发性也最高。  页面锁：开销和加锁界于表锁和行锁之间，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-24T06:04:09.242Z">
+<meta property="og:updated_time" content="2017-12-24T06:29:22.945Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL-锁">
-<meta name="twitter:description" content="锁分类 操作读锁(共享锁)写锁(排它锁、独占锁)  范围行锁表锁  时间悲观锁乐观锁">
+<meta name="twitter:description" content="概念MySQL中不同的存储引擎支持不同的锁机制。  MyIsam和Memory: 表级锁 BDBL: 页面锁 表级锁 InnoDB: 行级锁 MySQL服务器会给其加上表级锁  特性 表级锁：开销小，加锁块；不会出现死锁，锁定粒度大，发生锁冲突的概率最高，并发度最低。  行级锁：开销大，加锁慢；会出现死锁；锁定粒度最小，发生锁冲突的概率最低，并发性也最高。  页面锁：开销和加锁界于表锁和行锁之间，">
 
 
 
@@ -376,14 +376,37 @@
       
 
       
-        <h1 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h1><h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><ul>
-<li><p>操作<br>读锁(共享锁)<br>写锁(排它锁、独占锁)</p>
-</li>
-<li><p>范围<br>行锁<br>表锁</p>
-</li>
-<li><p>时间<br>悲观锁<br>乐观锁</p>
-</li>
+        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>MySQL中不同的存储引擎支持不同的锁机制。</p>
+<ul>
+<li>MyIsam和Memory: 表级锁</li>
+<li>BDBL: 页面锁 表级锁</li>
+<li>InnoDB: 行级锁 MySQL服务器会给其加上表级锁</li>
 </ul>
+<h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><ul>
+<li>表级锁：<pre><code>开销小，加锁块；不会出现死锁，锁定粒度大，发生锁冲突的概率最高，并发度最低。
+</code></pre></li>
+<li>行级锁：<pre><code>开销大，加锁慢；会出现死锁；锁定粒度最小，发生锁冲突的概率最低，并发性也最高。
+</code></pre></li>
+<li>页面锁：<pre><code>开销和加锁界于表锁和行锁之间，会出现死锁；锁定粒度界与表锁和行锁之间，并发一般。
+</code></pre></li>
+</ul>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><ul>
+<li>操作: <pre><code>读锁(共享锁) 写锁(排它锁、独占锁)
+</code></pre></li>
+<li>范围: <pre><code>行锁 表锁
+</code></pre></li>
+<li>时间: <pre><code>悲观锁 乐观锁
+</code></pre></li>
+</ul>
+<h1 id="表锁"><a href="#表锁" class="headerlink" title="表锁"></a>表锁</h1><ul>
+<li>MyISAM表的读操作:<pre><code>不会阻塞其他用户对同一个表的读请求，但会阻塞对同一个表的写请求。
+</code></pre></li>
+<li>MyISAM表的写操作:<pre><code>会阻塞其他用户对同一个表的读和写操作
+</code></pre></li>
+<li>MyISAM表的 读写操作之间 以及 写操作之间 是串行的。</li>
+</ul>
+<p>实例如下，打开了两个会话，<br>当t3处于读锁定时候，会话二可以检索t3数据。<br>当t3处于写锁定时候，会话二只有等到解锁后，才能显示数据（可以对比检索时间）。</p>
+<p>MyISAM在执行查询前，会自动执行表的加锁、解锁操作，<br>一般情况下不需要用户手动加、解锁，<br>但是有的时候也需要显示加锁。</p>
 
       
     </div>
@@ -509,7 +532,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -520,7 +543,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -531,7 +554,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -566,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#锁"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x9501;" class="headerlink" title="&#x9501;"></a>&#x9501;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分类"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5206;&#x7C7B;" class="headerlink" title="&#x5206;&#x7C7B;"></a>&#x5206;&#x7C7B;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6982;&#x5FF5;" class="headerlink" title="&#x6982;&#x5FF5;"></a>&#x6982;&#x5FF5;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特性"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x7279;&#x6027;" class="headerlink" title="&#x7279;&#x6027;"></a>&#x7279;&#x6027;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分类"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x5206;&#x7C7B;" class="headerlink" title="&#x5206;&#x7C7B;"></a>&#x5206;&#x7C7B;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表锁"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x8868;&#x9501;" class="headerlink" title="&#x8868;&#x9501;"></a>&#x8868;&#x9501;</span></a></li></ol></div>
             
 
           </div>

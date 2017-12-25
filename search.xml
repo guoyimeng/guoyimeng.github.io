@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Node.js-基础概念篇]]></title>
+    <url>%2F2017%2F12%2F25%2FNode.js-01-Node%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[What’s?简介123456789101112Apache 服务器PHP 脚本语言 执行环境Js 脚本语言 执行环境是浏览器的组成部分之一&quot;JS解析引擎&quot; Chrome中的JS解析引擎是最快的 V8 开源后端脚本语言 Java .Net PHPNode.js 是浏览器之外的一个JS执行环境 自带服务器Node.js 是环境软件 包含两部分JS的解析引擎 使用的Chrome的V8引擎本身可以充当服务器 不依赖于其他的服务器软件 使用场景 作为服务器使用 开发常用的前端工具 Node中的JS与浏览器中的JS区别 浏览器 ECMAScript DOM BOM Node中 ECMAScript Node扩展的功能 Node.js执行JS代码 使用Node的repl环境 可以用来执行JS代码 如浏览器的console一般 编写JS文件 使用Node.js软件来执行该文件 node filepath Node.js中的全局对象”global” 但一般不用 ES6 let 和 var 的区别 使用let声明变量 没有变量提升 使用let声明变量 不能在同一个作用域内 重复声明 代码块的概念 变量要用let声明 var声明和之前一样 { } 就是代码块 function if || else || else if for || while || do…while || switch try || catch const特性和let特性一样 声明常量 两种极端用法 全部使用let声明 若恒定不变则使用const 全部使用const声明 若需重新赋值 就改为let声明 Node.js模块 介绍 用户模块 开发者自己写的 核心模块 安装node软件的时候 提供的 第三方模块 别人开发的 模块暴露与使用 module.exports = {}; require(‘文件路径’); 执行这个文件 并且返回该文件中的对象modelue.exports的值 123456789101112131415161718192021page1.jsconst user = &#123; name: &apos;name&apos;, age: 20&#125;;function changeName(newName) &#123; user.name = newName;&#125;module.exports = &#123; user: user, changeName: changeName&#125;;page2.jsconst obj = require(&apos;./page1.js&apos;);console.log(obj.name); CommonJS规范 使用module.exports暴露数据 使用require执行并返回指定JS文件 若连续使用require 文件路径一致 只会执行一次 require会把返回值缓存起来 下次调用时 会直接得到返回值]]></content>
+      <categories>
+        <category>Node.js</category>
+      </categories>
+      <tags>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL-面试题汇总]]></title>
     <url>%2F2017%2F12%2F22%2FMySQL-11-%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB%2F</url>
     <content type="text"><![CDATA[数据库123数据库类型 以及 常见的数据库数据库设计的三范式MySQL一些系统函数 基本语法1SQL的核心功能 以及 DML操作的语法 数据类型12char和varchar的区别 以及 哪个查询效率高time date datetime timestamp的区别 连接类型1交叉连接 内连接 外连接(左外连接、右外连接) 自然连接 全连接 数据备份1备份与恢复的命令 单表 多表 库 存储引擎12MySQL存储引擎有哪些两大存储引擎的区别 (11点) 索引12索引是什么 产生背景 类型 区别 好处 缺点(负面影响) 创建原则 创建语法复合索引的使用 遵循从左往右原则 事务1事务概念 特点 产生背景 具体使用 SQL注入1SQL注入产生原因 具体例子 解决方案 优化12从设计或者维护的角度 优化从使用或者执行的角度 优化 慢日志123```## 分区与分表技术 分区key hash range list 分表水平 垂直12## 具体操作 获取下一个自增长id的方法IP如何保存如何在MySQL中写入utf8格式数据mysql_fetch_row() mysql_fetch_assoc() mysql_fetch_array()面向对象 PHP实例化操作数据库的类面向过程 实现PHP简单查询数据库PHP访问数据库的步骤``` 待补充]]></content>
@@ -37,7 +48,7 @@
   <entry>
     <title><![CDATA[MySQL-锁]]></title>
     <url>%2F2017%2F12%2F15%2FMySQL-06-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
-    <content type="text"><![CDATA[锁分类 操作读锁(共享锁)写锁(排它锁、独占锁) 范围行锁表锁 时间悲观锁乐观锁]]></content>
+    <content type="text"><![CDATA[概念MySQL中不同的存储引擎支持不同的锁机制。 MyIsam和Memory: 表级锁 BDBL: 页面锁 表级锁 InnoDB: 行级锁 MySQL服务器会给其加上表级锁 特性 表级锁：开销小，加锁块；不会出现死锁，锁定粒度大，发生锁冲突的概率最高，并发度最低。 行级锁：开销大，加锁慢；会出现死锁；锁定粒度最小，发生锁冲突的概率最低，并发性也最高。 页面锁：开销和加锁界于表锁和行锁之间，会出现死锁；锁定粒度界与表锁和行锁之间，并发一般。 分类 操作: 读锁(共享锁) 写锁(排它锁、独占锁) 范围: 行锁 表锁 时间: 悲观锁 乐观锁 表锁 MyISAM表的读操作:不会阻塞其他用户对同一个表的读请求，但会阻塞对同一个表的写请求。 MyISAM表的写操作:会阻塞其他用户对同一个表的读和写操作 MyISAM表的 读写操作之间 以及 写操作之间 是串行的。 实例如下，打开了两个会话，当t3处于读锁定时候，会话二可以检索t3数据。当t3处于写锁定时候，会话二只有等到解锁后，才能显示数据（可以对比检索时间）。 MyISAM在执行查询前，会自动执行表的加锁、解锁操作，一般情况下不需要用户手动加、解锁，但是有的时候也需要显示加锁。]]></content>
       <categories>
         <category>MySQL</category>
       </categories>
