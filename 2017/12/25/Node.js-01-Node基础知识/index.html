@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="二萌">
 <meta property="og:description" content="What’s?简介123456789101112Apache 服务器PHP 脚本语言 执行环境Js	脚本语言 执行环境是浏览器的组成部分之一&amp;quot;JS解析引擎&amp;quot;		Chrome中的JS解析引擎是最快的 V8 开源后端脚本语言 Java .Net PHPNode.js 是浏览器之外的一个JS执行环境 自带服务器Node.js 是环境软件 包含两部分JS的解析引擎 使用的Chrome的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-25T03:02:16.260Z">
+<meta property="og:updated_time" content="2017-12-25T07:59:32.485Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js-基础概念篇">
 <meta name="twitter:description" content="What’s?简介123456789101112Apache 服务器PHP 脚本语言 执行环境Js	脚本语言 执行环境是浏览器的组成部分之一&amp;quot;JS解析引擎&amp;quot;		Chrome中的JS解析引擎是最快的 V8 开源后端脚本语言 Java .Net PHPNode.js 是浏览器之外的一个JS执行环境 自带服务器Node.js 是环境软件 包含两部分JS的解析引擎 使用的Chrome的">
@@ -391,10 +391,17 @@
 </ul>
 <p>Node.js中的全局对象”global” 但一般不用</p>
 <h2 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h2><ul>
-<li><p>let 和 var 的区别 </p>
+<li><p>let和var的区别 </p>
 <ul>
-<li>使用let声明变量 没有变量提升</li>
-<li>使用let声明变量 不能在同一个作用域内 重复声明</li>
+<li>let 不能在同一个作用域内 重复声明</li>
+<li>let 可以重复赋值</li>
+<li>let 块级作用域</li>
+<li><p>let 没有变量提升</p>
+</li>
+<li><p>var 有变量提升</p>
+</li>
+<li>var 函数级作用域</li>
+<li></li>
 </ul>
 </li>
 <li><p>代码块的概念 变量要用let声明 var声明和之前一样 </p>
@@ -406,8 +413,9 @@
 <li>try || catch</li>
 </ul>
 </li>
-<li><p>const特性和let特性一样</p>
+<li><p>let和const的区别</p>
 <ul>
+<li>const特性和let特性一样</li>
 <li>声明常量</li>
 </ul>
 </li>
@@ -420,27 +428,32 @@
 </ul>
 <h2 id="Node-js模块"><a href="#Node-js模块" class="headerlink" title="Node.js模块"></a>Node.js模块</h2><ul>
 <li><p>介绍</p>
-<ul>
-<li>用户模块 开发者自己写的</li>
-<li>核心模块    安装node软件的时候 提供的</li>
-<li>第三方模块 别人开发的</li>
-</ul>
+<blockquote>
+<p>用户模块 开发者自己写的<br>核心模块    安装node软件的时候 提供的<br>第三方模块 别人开发的</p>
+</blockquote>
 </li>
 <li><p>模块暴露与使用</p>
-<ul>
-<li>module.exports = {};</li>
-<li>require(‘文件路径’); 执行这个文件 并且返回该文件中的对象modelue.exports的值</li>
-</ul>
+<blockquote>
+<p>module.exports = {};<br>require(‘文件路径’); 执行这个文件 并且返回该文件中的对象modelue.exports的值</p>
+</blockquote>
 </li>
 </ul>
 <p>/<em>page1.js</em>/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">const user = &#123;</span><br><span class="line">	name: &apos;name&apos;,</span><br><span class="line">	age: 20</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function changeName(newName) &#123;</span><br><span class="line">	user.name = newName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">	user: user,</span><br><span class="line">	changeName: changeName</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>/<em>page2.js</em>/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const obj = require(&apos;./page1.js&apos;);</span><br><span class="line">console.log(obj.name);</span><br></pre></td></tr></table></figure></p>
-<pre><code>- CommonJS规范
-    - 使用module.exports暴露数据
-    - 使用require执行并返回指定JS文件
-    - 若连续使用require 文件路径一致 只会执行一次  require会把返回值缓存起来 
-        下次调用时 会直接得到返回值
-</code></pre>
+<ul>
+<li><p>CommonJS规范</p>
+<blockquote>
+<p>使用module.exports暴露数据<br>使用require执行并返回指定JS文件<br>若连续使用require 文件路径一致 只会执行一次  require会把返回值缓存起来 </p>
+<pre><code>下次调用时 会直接得到返回值
+</code></pre></blockquote>
+</li>
+<li><p>ES6的模板字符串</p>
+<blockquote>
+<p>使用反引号代替原本的引号 ``<br>这样的话 可以任意换行<br>在反引号中 可以通过 ${变量名} 来解析变量<br>${ 这之间可以写三元表达式等等 }</p>
+</blockquote>
+</li>
+</ul>
+
       
     </div>
     
@@ -479,6 +492,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/25/Node.js-02-Node基础知识/" rel="prev" title="Node.js-核心模块篇">
+                Node.js-核心模块篇 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -561,7 +578,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
