@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="二萌">
 <meta property="og:description" content="What’s?简介123456789101112Apache 服务器PHP 脚本语言 执行环境Js	脚本语言 执行环境是浏览器的组成部分之一&amp;quot;JS解析引擎&amp;quot;		Chrome中的JS解析引擎是最快的 V8 开源后端脚本语言 Java .Net PHPNode.js 是浏览器之外的一个JS执行环境 自带服务器Node.js 是环境软件 包含两部分JS的解析引擎 使用的Chrome的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-25T02:45:09.619Z">
+<meta property="og:updated_time" content="2017-12-25T03:02:16.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js-基础概念篇">
 <meta name="twitter:description" content="What’s?简介123456789101112Apache 服务器PHP 脚本语言 执行环境Js	脚本语言 执行环境是浏览器的组成部分之一&amp;quot;JS解析引擎&amp;quot;		Chrome中的JS解析引擎是最快的 V8 开源后端脚本语言 Java .Net PHPNode.js 是浏览器之外的一个JS执行环境 自带服务器Node.js 是环境软件 包含两部分JS的解析引擎 使用的Chrome的">
@@ -429,20 +429,18 @@
 <li><p>模块暴露与使用</p>
 <ul>
 <li>module.exports = {};</li>
-<li><p>require(‘文件路径’); 执行这个文件 并且返回该文件中的对象modelue.exports的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">page1.js</span><br><span class="line"></span><br><span class="line">const user = &#123;</span><br><span class="line">	name: &apos;name&apos;,</span><br><span class="line">	age: 20</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function changeName(newName) &#123;</span><br><span class="line">	user.name = newName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">	user: user,</span><br><span class="line">	changeName: changeName</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">page2.js</span><br><span class="line"></span><br><span class="line">const obj = require(&apos;./page1.js&apos;);</span><br><span class="line">console.log(obj.name);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>CommonJS规范</p>
-<ul>
-<li>使用module.exports暴露数据</li>
-<li>使用require执行并返回指定JS文件</li>
-<li>若连续使用require 文件路径一致 只会执行一次  require会把返回值缓存起来<br>  下次调用时 会直接得到返回值</li>
+<li>require(‘文件路径’); 执行这个文件 并且返回该文件中的对象modelue.exports的值</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
+<p>/<em>page1.js</em>/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">const user = &#123;</span><br><span class="line">	name: &apos;name&apos;,</span><br><span class="line">	age: 20</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function changeName(newName) &#123;</span><br><span class="line">	user.name = newName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">	user: user,</span><br><span class="line">	changeName: changeName</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>/<em>page2.js</em>/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const obj = require(&apos;./page1.js&apos;);</span><br><span class="line">console.log(obj.name);</span><br></pre></td></tr></table></figure></p>
+<pre><code>- CommonJS规范
+    - 使用module.exports暴露数据
+    - 使用require执行并返回指定JS文件
+    - 若连续使用require 文件路径一致 只会执行一次  require会把返回值缓存起来 
+        下次调用时 会直接得到返回值
+</code></pre>
       
     </div>
     
